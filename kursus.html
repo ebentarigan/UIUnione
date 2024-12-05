@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unione</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <body class="bg-white ">
+        <header>
+            <nav>
+                <div class="Logo">
+                    <img src="img/logoputihtest.png" alt="Logo Website" width="100" />
+                </div>
+                <ul>
+                    <li><a href="index.php">Course</a></li>
+                    <li><a href="about.html">Job</a></li>
+                    <li><a href="contact.html">Community</a></li>
+                    <li><a href="login.html">Connection</a></li>
+                    <li><a href="register.html">News</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="relative w-full h-[384px] overflow-hidden">
+            <!-- Wrapper for slides -->
+            <div class="flex transition-transform duration-700 ease-in-out" id="carousel">
+                <!-- Slide 1 -->
+                <div class="flex-shrink-0 w-full">
+                    <img src="img/header-kursus2.jpg" alt="Google" class="w-full h-auto">
+                </div>
+                <!-- Slide 2 -->
+                <div class="flex-shrink-0 w-full">
+                    <img src="img/header-kursus2.jpg" alt="Facebook" class="w-full h-auto">
+                </div>
+                <!-- Slide 3 -->
+                <div class="flex-shrink-0 w-full">
+                    <img src="img/header-kursus2.jpg" alt="Microsoft" class="w-full h-auto">
+                </div>
+            </div>
+
+            <!-- Navigation dots -->
+            <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-3">
+                <button class="w-3 h-3 bg-gray-300 rounded-full" data-slide="0"></button>
+                <button class="w-3 h-3 bg-gray-300 rounded-full" data-slide="1"></button>
+                <button class="w-3 h-3 bg-gray-300 rounded-full" data-slide="2"></button>
+            </div>
+        </div>
+
+        <script>
+            const carousel = document.getElementById('carousel');
+            const slides = carousel.children;
+            const totalSlides = slides.length;
+            const dots = document.querySelectorAll('[data-slide]');
+
+            let currentIndex = 0;
+
+            // Function to update slide position
+            function updateSlide() {
+                const offset = -(currentIndex * 100);
+                carousel.style.transform = `translateX(${offset}%)`;
+
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('bg-blue-500', index === currentIndex);
+                    dot.classList.toggle('bg-gray-300', index !== currentIndex);
+                });
+            }
+
+            // Function to go to the next slide
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlide();
+            }
+
+            // Auto-slide every 3 seconds
+            setInterval(nextSlide, 3000);
+
+            // Add click event to dots for manual navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateSlide();
+                });
+            });
+
+            // Initialize slide position
+            updateSlide();
+        </script>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+    <!-- Card 1 -->
+    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+      <img class="w-full" src="https://via.placeholder.com/400x250" alt="Card image" sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw">
+      <div class="px-6 py-4">
+        <div class="flex items-center space-x-3">
+          <img class="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/100" alt="Profile picture">
+          <h2 class="font-bold text-xl">John Doe</h2>
+        </div>
+        <p class="text-gray-700 text-base mt-2">This is an example of a simple card with a profile image and some content.</p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Action Button</button>
+      </div>
+    </div>
+  
+    <!-- Card 2 -->
+    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+      <img class="w-full" src="https://via.placeholder.com/400x250" alt="Card image">
+      <div class="px-6 py-4">
+        <div class="flex items-center space-x-3">
+          <img class="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/100" alt="Profile picture">
+          <h2 class="font-bold text-xl">Jane Smith</h2>
+        </div>
+        <p class="text-gray-700 text-base mt-2">Another example of a card with a profile image and content.</p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Action Button</button>
+      </div>
+    </div>
+  
+    <!-- Card 3 -->
+    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+      <img class="w-full" src="https://via.placeholder.com/400x250" alt="Card image">
+      <div class="px-6 py-4">
+        <div class="flex items-center space-x-3">
+          <img class="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/100" alt="Profile picture">
+          <h2 class="font-bold text-xl">Alice Cooper</h2>
+        </div>
+        <p class="text-gray-700 text-base mt-2">This is a card with a profile image and name displayed side by side.</p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Action Button</button>
+      </div>
+    </div>
+  
+    <!-- Card 4 -->
+    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+      <img class="w-full" src="https://via.placeholder.com/400x250" alt="Card image">
+      <div class="px-6 py-4">
+        <div class="flex items-center space-x-3">
+          <img class="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/100" alt="Profile picture">
+          <h2 class="font-bold text-xl">Bob Martin</h2>
+        </div>
+        <p class="text-gray-700 text-base mt-2">The fourth card in this example.</p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Action Button</button>
+      </div>
+    </div>
+    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+        <img class="w-full" src="https://via.placeholder.com/400x250" alt="Card image">
+        <div class="px-6 py-4">
+          <div class="flex items-center space-x-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/100" alt="Profile picture">
+            <h2 class="font-bold text-xl">Bob Martin</h2>
+          </div>
+          <p class="text-gray-700 text-base mt-2">The fourth card in this example.</p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Action Button</button>
+        </div>
+      </div>
+
+      <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+        <img class="w-full" src="https://via.placeholder.com/400x250" alt="Card image">
+        <div class="px-6 py-4">
+          <div class="flex items-center space-x-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/100" alt="Profile picture">
+            <h2 class="font-bold text-xl">Bob Martin</h2>
+          </div>
+          <p class="text-gray-700 text-base mt-2">The fourth card in this example.</p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Action Button</button>
+        </div>
+      </div>
+
+      <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+        <img class="w-full" src="https://via.placeholder.com/400x250" alt="Card image">
+        <div class="px-6 py-4">
+          <div class="flex items-center space-x-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/100" alt="Profile picture">
+            <h2 class="font-bold text-xl">Bob Martin</h2>
+          </div>
+          <p class="text-gray-700 text-base mt-2">The fourth card in this example.</p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Action Button</button>
+        </div>
+      </div>
+
+      <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+        <img class="w-full" src="https://via.placeholder.com/400x250" alt="Card image">
+        <div class="px-6 py-4">
+          <div class="flex items-center space-x-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/100" alt="Profile picture">
+            <h2 class="font-bold text-xl">Bob Martin</h2>
+          </div>
+          <p class="text-gray-700 text-base mt-2">The fourth card in this example.</p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Action Button</button>
+        </div>
+      </div>
+
+      <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+        <img class="w-full" src="https://via.placeholder.com/400x250" alt="Card image">
+        <div class="px-6 py-4">
+          <div class="flex items-center space-x-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/100" alt="Profile picture">
+            <h2 class="font-bold text-xl">Bob Martin</h2>
+          </div>
+          <p class="text-gray-700 text-base mt-2">The fourth card in this example.</p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Action Button</button>
+        </div>
+      </div>
+
+      <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+        <img class="w-full" src="https://via.placeholder.com/400x250" alt="Card image">
+        <div class="px-6 py-4">
+          <div class="flex items-center space-x-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/100" alt="Profile picture">
+            <h2 class="font-bold text-xl">Bob Martin</h2>
+          </div>
+          <p class="text-gray-700 text-base mt-2">The fourth card in this example.</p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Action Button</button>
+        </div>
+      </div>
+
+      <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+        <img class="w-full" src="https://via.placeholder.com/400x250" alt="Card image">
+        <div class="px-6 py-4">
+          <div class="flex items-center space-x-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/100" alt="Profile picture">
+            <h2 class="font-bold text-xl">Bob Martin</h2>
+          </div>
+          <p class="text-gray-700 text-base mt-2">The fourth card in this example.</p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Action Button</button>
+        </div>
+      </div>
+
+      <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+        <img class="w-full" src="https://via.placeholder.com/400x250" alt="Card image">
+        <div class="px-6 py-4">
+          <div class="flex items-center space-x-3">
+            <img class="w-10 h-10 rounded-full object-cover" src="https://via.placeholder.com/100" alt="Profile picture">
+            <h2 class="font-bold text-xl">Bob Martin</h2>
+          </div>
+          <p class="text-gray-700 text-base mt-2">The fourth card in this example.</p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Action Button</button>
+        </div>
+      </div>
+  </div>
+  
+    </body>
