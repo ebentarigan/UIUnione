@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+      <title>Community</title>
+    </head>
+
+    <!--navigasi dengan latar hitam dengan sticky-->
+    <div class="bg-black text-white sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between py-2">
+          <div class="flex space-x-8">
+            <a href="#" class="hover:text-gray-300">Home</a>
+            <a href="#" class="hover:text-gray-300">Jobs</a>
+            <a href="#" class="hover:text-gray-300">Course</a>
+            <a href="#" class="hover:text-gray-300">Connection</a>
+            <a href="#" class="hover:text-gray-300">Community</a>
+    
+            <input
+            type="text"
+            placeholder="Search..."
+            class="px-20 py-1 rounded bg-white text-black focus:outline-none"
+          />
+    
+          <a href="#" class="hover:text-gray-300">Newspaper</a>
+          <a href="#" class="hover:text-gray-300">Help</a>
+          <a href="#" class="hover:text-gray-300">Profile</a>         
+          </div>
+        </div>
+      </div>
+<!--Content utama-->
+      <div class="bg-white shadow-md"> <!--latar putih dan bayangan halus pada header-->
+        <div class="max-w-6xl mx-auto p-6 flex justify-between items-center">
+          <div class="flex items-center space-x-4"> <!--elemen di dalammnya di tata dengan flexbox secara horizontal-->
+            <img src="profil1.jpg" alt="Logo" class="w-10 h-10 rounded-full">
+            <h1 class="text-2xl font-bold text-gray-800">We Are Friends</h1>
+          </div>
+          <div>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Join Group</button> <!--hover mengganti latar biru menjadi gelap-->
+            <button class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400">Info</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Main Content -->
+      <div class="max-w-6xl mx-auto p-6">
+        <div class="mb-8">
+          <h6 class="text-gray-700">
+            Our mission at TechConnect is to cultivate a dynamic and inclusive community where tech enthusiasts of all backgrounds come together to team, share, and innovate. From seasoned developers to curious hobbyists, we provide a space to engage in discussions on cutting-edge technologies, access valuable resources, showcase projects, and participate in coding challenges and workshops...
+          </h6>
+        </div>
+    
+        <!-- Post Section -->
+        <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+          <div class="flex items-center mb-6"> <!--layout horizontal dan margin 6-->
+            <img src="profil6.jpg" alt="User Image" class="w-12 h-12 rounded-full">
+            <div class="ml-4">
+              <h2 class="text-lg font-semibold">Jericho Yeremia</h2>
+              <p class="text-gray-500 text-sm">Data Science Student at Telkom University</p>
+            </div>
+          </div>
+          <p class="mb-4">Me with my great team</p>
+          <img src="job2.jpg" alt="Team Photo" class="w-full rounded-lg">
+          <div class="flex justify-between items-center mt-4 text-gray-600">
+            <div class="flex space-x-4">
+              <button class="hover:text-blue-600">
+              </button>
+              <button class="hover:text-blue-600"> <!--memberi efer kebiruan pada tombol-->
+                <button class=" text-gray-500 font-medium">Like</button>
+                <button class=" text-gray-500 font-medium">Share</button>
+                <button class=" text-gray-500 font-medium">Comment</button>
+              </button>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Suggestions Section -->
+         
+        <div class="space-y-4 overflow-auto h-36 border p-2">
+        <div class="bg-white shadow-md rounded-lg p-6"> <!--latar belakang putih,bayang,sudut bulat-->
+          <h2 class="text-lg font-semibold mb-4">Suggestions</h2>
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-4">
+                <img src="fotol3.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                <div>
+                  <h3 class="text-gray-800 font-medium">Brandon Sanjaya</h3>
+                  <p class="text-sm text-gray-500">Informatics Student at Telkom University</p>
+                </div>
+              </div>
+              <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Follow</button>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-4">
+                <img src="job1.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                <div>
+                  <h3 class="text-gray-800 font-medium">Harley Queen</h3>
+                  <p class="text-sm text-gray-500">Business Admin Student at Telkom University</p>
+                </div>
+              </div>
+              <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Follow</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+    </html>
