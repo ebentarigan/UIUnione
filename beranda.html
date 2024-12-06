@@ -5,29 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Social Media Design</title>
   <script src="https://cdn.tailwindcss.com"></script>
-<!--navigasi-->
-<div class="bg-black text-white sticky top-0 z-50">
-    <div class="container mx-auto flex items-center justify-between py-2">
-      <div class="flex space-x-8">
-        <a href="#" class="hover:text-gray-300">Home</a>
-        <a href="#" class="hover:text-gray-300">Jobs</a>
-        <a href="#" class="hover:text-gray-300">Course</a>
-        <a href="#" class="hover:text-gray-300">Connection</a>
-        <a href="#" class="hover:text-gray-300">Community</a>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-        <input
-        type="text"
-        placeholder="Search..."
-        class="px-20 py-1 rounded bg-white text-black focus:outline-none"
-      />
+<body class="bg-gray-100 text-gray-900">
+  <header>
+    <nav>
+        <div class="Logo">
+            <img src="img/logoputihtest.png" alt="Logo Website" width="100" />
+        </div text-white>
+        <div class="flex items-center space-x-2 flex-grow ml-6 max-w-full">
+            <input
+                type="search"
+                class="p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Search..."
+            />
+        <div>
+            <button class="p-2  text-white rounded-full hover:bg-blue-600 transition duration-200">
+                <i class="ri-search-line text-white"></i> 
+            </button>
 
-      <a href="#" class="hover:text-gray-300">Newspaper</a>
-      <a href="#" class="hover:text-gray-300">Help</a>
-      <a href="#" class="hover:text-gray-300">Profile</a>
-      
-      </div>
-    </div>
-  </div>
+        </div>
+            
+        </div>
+        <ul>
+            <li><a href="index.php">Course</a></li>
+            <li><a href="about.html">Job</a></li>
+            <li><a href="contact.html">Community</a></li>
+            <li><a href="login.html">Connection</a></li>
+            <li><a href="register.html">News</a></li>
+        </ul>
+    </nav>
+</header>
   
 </head>
 <body class="bg-white">
