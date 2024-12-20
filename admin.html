@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+
+    <nav class="h-16 bg-black flex justify-between items-center px-5">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="logo.png" alt="Logo" class="max-h-10">
+        </div>
+    
+        <!-- Navigation Links -->
+        <ul class="flex list-none m-0 p-0">
+          <li class="ml-5">
+            <a href="#" class="text-white no-underline text-base hover:text-gray-500">Home</a>
+          </li>
+          <li class="ml-5">
+            <a href="#" class="text-white no-underline text-base hover:text-gray-500">About</a>
+          </li>
+          <li class="ml-5">
+            <a href="#" class="text-white no-underline text-base hover:text-gray-500">Services</a>
+          </li>
+          <li class="ml-5">
+            <a href="#" class="text-white no-underline text-base hover:text-gray-500">Contact</a>
+          </li>
+        </ul>
+      </nav><br>
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-black dark:text-black">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-black dark:text-white">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    No
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Nama Pengguna
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Email
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    aksi
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    <span class="sr-only">Edit</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b dark:bg-white dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" class="px-6 py-4 font-medium text-black-900 whitespace-nowrap dark:text-black">
+                  1
+                </th>
+                <td class="px-6 py-4">
+                    Anton
+                </td>
+                <td class="px-6 py-4">
+                    anton123@gmail.com
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">hapus</a>
+                </td>
+            </tr>
+            <tr class="bg-white border-b dark:bg-white dark:border-white hover:bg-white dark:hover:bg-gray-600">
+                <th scope="row" class="px-6 py-4 font-medium text-black whitespace-nowrap dark:text-black">
+                 2
+                </th>
+                <td class="px-6 py-4">
+                    Aldi
+                </td>
+                <td class="px-6 py-4">
+                    aldi@gmail.com
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">hapus</a>
+                </td>
+            </tr>
+            <tr class="bg-white dark:bg-white hover:bg-gray-50 dark:hover:bg-gray-600">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-black">
+                  3
+                </th>
+                <td class="px-6 py-4">
+                    Alam
+                </td>
+                <td class="px-6 py-4">
+                    alam@gmail.com
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                </td>
+                <td class="px-6 py-4 text-right">
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">hapus</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
