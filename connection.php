@@ -1,4 +1,22 @@
+<?php
+// Konfigurasi koneksi database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "connections"; // Ganti dengan nama database Anda
 
+// Membuat koneksi ke database
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Cek koneksi
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+// Query untuk mengambil semua user
+$sql = "SELECT id_pengguna, username FROM user WHERE role = 'users'";
+$result = $conn->query($sql);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +54,7 @@
                 if ($result->num_rows > 0) {
                     // Loop melalui data user
                     while ($row = $result->fetch_assoc()) {
-                        echo ''
+                        echo '
                         <div class="flex items-center justify-between">
                             <div class="flex items-center space-x-4">
                                 <img src="default-profile.jpg" alt="User Image" class="w-10 h-10 rounded-full">
@@ -45,7 +63,7 @@
                             <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
                                 Add Connection
                             </button>
-                        </div> ';
+                        </div>';
                     }
                 } else {
                     echo '<p class="text-gray-500">No users available to connect.</p>';
@@ -92,3 +110,7 @@
 </body>
 </html>
 
+<?php
+// Tutup koneksi database
+$conn->close();
+?>
