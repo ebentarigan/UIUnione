@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation bar with black background and sticky positioning -->
+    <div class="bg-black text-white sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between py-2">
+            <div class="flex space-x-8">
+                <a href="#" class="hover:text-gray-300">Home</a>
+                <a href="#" class="hover:text-gray-300">Jobs</a>
+                <a href="#" class="hover:text-gray-300">Course</a>
+                <a href="#" class="hover:text-gray-300">Connection</a>
+                <a href="#" class="hover:text-gray-300">Community</a>
+                <input type="text" placeholder="Search..." class="px-20 py-1 rounded bg-white text-black focus:outline-none" />
+                <a href="#" class="hover:text-gray-300">Newspaper</a>
+                <a href="#" class="hover:text-gray-300">Help</a>
+                <a href="#" class="hover:text-gray-300">Profile</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="flex justify-center m-5">
+        <div class="w-full bg-white rounded-lg shadow-lg p-4 border border-gray-200">
+            <h1 class="text-2xl  font-bold mb-6">FAQs</h1>
+            <div id="accordion-collapse" data-accordion="collapse">
+
+                <!-- FAQ Item 1 -->
+                <h2 id="accordion-collapse-heading-1">
+                    <button type="button" class="flex items-center justify-between w-full p-5 font-medium border border-gray-200 rounded-t-lg hover:bg-gray-100" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
+                        <span>What is Unione?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
+                    <div class="p-5 border border-gray-200 bg-white">
+                        <p class="mb-2 text-black">Unione is a job information application that provides up-to-date listings of job opportunities from various industries and companies.</p>
+                        <p class="text-black">It is designed to help job seekers find roles that match their interests, skills, and experience.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <h2 id="accordion-collapse-heading-2">
+                    <button type="button" class="flex items-center justify-between w-full p-5 font-medium border border-gray-200 hover:bg-gray-100" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
+                        <span>What are the main features of Unione?</span>
+                        <svg data-accordion-icon class="w-3 h-3 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+                    <div class="p-5 border border-gray-200 bg-white">
+                        <p class="mb-2 text-black">Job Search: Easily search for job opportunities based on categories, location, salary, and more.</p>
+                        <p class="text-black">Community: Join a supportive community of job seekers and professionals to share tips, insights, and experiences.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <h2 id="accordion-collapse-heading-3">
+                    <button type="button" class="flex items-center justify-between w-full p-5 font-medium border border-gray-200 hover:bg-gray-100" data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
+                        <span>Is the Community feature free to use?</span>
+                        <svg data-accordion-icon class="w-3 h-3 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+                    <div class="p-5 border border-gray-200 bg-white">
+                        <p class="text-black">Yes, the Community feature is free for all users. You can participate in discussions, ask questions, and connect with other members to enhance your job search experience.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <h2 id="accordion-collapse-heading-4">
+                    <button type="button" class="flex items-center justify-between w-full p-5 font-medium border border-gray-200 hover:bg-gray-100" data-accordion-target="#accordion-collapse-body-4" aria-expanded="false" aria-controls="accordion-collapse-body-4">
+                        <span>Is there a certificate provided after completing a course?</span>
+                        <svg data-accordion-icon class="w-3 h-3 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-4" class="hidden" aria-labelledby="accordion-collapse-heading-4">
+                    <div class="p-5 border border-gray-200 bg-white">
+                        <p class="text-black">Yes, upon successful completion of a course, you will receive a certificate that you can add to your Unione profile or share on LinkedIn.</p>
+                    </div>
+                </div>
+
+
+                 <!-- FAQ Item 4 -->
+                 <h2 id="accordion-collapse-heading-5">
+                  <button type="button" class="flex items-center justify-between w-full p-5 font-medium border border-gray-200 hover:bg-gray-100" data-accordion-target="#accordion-collapse-body-4" aria-expanded="false" aria-controls="accordion-collapse-body-4">
+                      <span>Is there a certificate provided after completing a course?</span>
+                      <svg data-accordion-icon class="w-3 h-3 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
+                      </svg>
+                  </button>
+              </h2>
+              <div id="accordion-collapse-body-5" class="hidden" aria-labelledby="accordion-collapse-heading-4">
+                  <div class="p-5 border border-gray-200 bg-white">
+                      <p class="text-black">Yes, upon successful completion of a course, you will receive a certificate that you can add to your Unione profile or share on LinkedIn.</p>
+                  </div>
+              </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white rounded-lg shadow dark:bg-gray-900 w-full">
+        <div class="px-4 py-10">
+            <hr class="my-8 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                © 2024 <a href="https://flowbite.com/" class="hover:underline">Telkom Group</a>. All Rights Reserved.
+            </span>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+
