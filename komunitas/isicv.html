@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Isi News</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    </head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Pelamar</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
 <body>
     <header>
-        <nav class="flex items-center justify-between p-4 bg-black top-0 fixed w-full shadow-md z-50">
+        <nav class="flex items-center justify-between p-2 bg-black top-0 fixed w-full shadow-md z-50">
             <!-- Logo -->
             <div class="Logo">
-                <img src="img/logoputihtest.png" alt="Logo Website" width="80" />
+                <img src="../img/logoputihtest.png" alt="Logo Website" width="80" />
             </div>
 
             <!-- Search Bar -->
@@ -103,61 +100,58 @@
         </nav>
     </header>
 
-    <body class="bg-white-100 my-10 mt-16">
-    <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-        <!-- Header Section -->
-        <div class="bg-blue-700 text-white p-4 flex items-center">
-            <img src="img/AI02.jpg" alt="Kominfo Logo" class="w-12 h-12 rounded-full">
-            <div class="ml-4">
-                <h1 class="text-lg font-bold">Augmented Reality</h1>
-                <p class="text-sm">AI dalam Inovasi Global<br>perkembangan jaman<br></p>
+<div class="max-w-4xl mx-auto justify-center mt-16 ">
+<!-- Form untuk memasukkan data -->
+<div class="card bg-white shadow-md rounded-md">
+    <div class="card-header bg-blue-600 text-white p-4 rounded-t-md">
+        <h2 class="text-lg font-semibold">Create/Edit Data</h2>
+    </div>
+    <div class="card-body p-6">
+        <form action="profile.php" method="POST">
+            <div class="mb-4">
+                <label for="nama_lengkap" class="block text-gray-700 font-medium mb-2">Nama Lengkap</label>
+                <input type="text" id="nama_lengkap" name="nama_lengkap" class="w-full border border-gray-300 rounded-md p-2 focus:ring focus:ring-blue-300">
             </div>
-        </div>
-
-        <!-- Content Section -->
-        <div class="p-6">
-            <div class="flex justify-between items-center">
-                <h2 class="text-xl font-bold text-blue-800">Menerapkan Teknologi terkini dalam pengembangan 
-                    Augmented Reality 
-                    sebagai aplikasi teknologi terkini
-                </h2>
-                <p class="text-gray-600 text-sm">Kamis, 22 Juli 2021</p>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-md p-2 focus:ring focus:ring-blue-300">
             </div>
-
-            <div class="mt-2 flex justify-center">
-                <img src="img/Ai01.jpg" alt="Augmented Reality" class="max-w-lg h-auto border border-gray-200 mx-auto">
+            <div class="mb-4">
+                <label for="no_telepon" class="block text-gray-700 font-medium mb-2">No Telepon</label>
+                <input type="text" id="no_telepon" name="no_telepon" class="w-full border border-gray-300 rounded-md p-2 focus:ring focus:ring-blue-300">
             </div>
-
-            <div class="mt-6">
-                <h3 class="text-lg font-semibold">Penjelasan:</h3>
-                <p class="text-gray-800 mt-2 leading-relaxed">
-                    Lonjakan adopsi AR telah mentransfortasi berbagai industri,mulai dari manufaktur hingga ritel.di pabrik,AR memberdayakan pekerkjaan dengan instruksi step-by-step
-                    mengurangu waktu pelatihan dan meningkatkan efisiensi.di toko ritel,pelanggan dapat mencoba pakaian atau furnitur secara virtual,menciptakan pengalaman berbelanja yang lebih personal dan nyaman.
-                    Potensi AR tampaknya tidak terbatas. Dalam perawatan kesehatan, AR membantu ahli bedah melakukan prosedur dengan presisi yang lebih besar, sementara di bidang pendidikan, AR menghidupkan pelajaran, meningkatkan keterlibatan siswa. Demikian pula, di bidang pariwisata, AR memperkaya pengalaman perjalanan dengan memberikan informasi kontekstual dan augmented.
-                    <strong>“Teknologi Pendukung”</strong>
-                </p>
-                <p class="text-gray-800 mt-2 leading-relaxed">
-                    Kemajuan pesat dalam teknologi seperti computer vision, pengenalan pola, dan pelacakan lokasi telah menjadi katalisator utama untuk pertumbuhan AR. Sensor kamera yang canggih, algoritme AI yang kuat, dan prosesor yang bertenaga rendah membuka kemungkinan tak terbatas untuk aplikasi AR.
-                </p>
-                <p class="text-gray-800 mt-2 leading-relaxed">
-                    Terlepas dari potensinya yang luar biasa, AR juga hadir dengan tantangannya. Kekhawatiran privasi, keandalan perangkat keras, dan kompatibilitas antar perangkat harus diatasi agar AR dapat mencapai penerimaan yang lebih luas.
-                </p>
-                <p class="text-gray-800 mt-2 leading-relaxed">
-                    Menerapkan Teknologi Terkini dalam Pengembangan Augmented Reality (AR) merepresentasikan titik balik dalam inovasi teknologi. Dari merevolusi industri hingga memberdayakan individu, AR memiliki potensi untuk membentuk ulang dunia seperti yang kita kenal. Puskomedia bangga menjadi pendamping terpercaya Anda dalam perjalanan AR ini, menyediakan layanan dan bimbingan ahli untuk membantu Anda memanfaatkan sepenuhnya kekuatan teknologi yang luar biasa ini.
-                </p>
+            <div class="mb-4">
+                <label for="tanggal_lahir" class="block text-gray-700 font-medium mb-2">Tanggal Lahir</label>
+                <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="w-full border border-gray-300 rounded-md p-2 focus:ring focus:ring-blue-300">
             </div>
-
-            <div class="mt-6">
-                <h3 class="text-lg font-semibold text-green-600">Status: Masih berjalan</h3>
+            <div class="mb-4">
+                <label for="pendidikan_terakhir" class="block text-gray-700 font-medium mb-2">Pendidikan Terakhir</label>
+                <input type="text" id="pendidikan_terakhir" name="pendidikan_terakhir" class="w-full border border-gray-300 rounded-md p-2 focus:ring focus:ring-blue-300">
             </div>
-
-
-            <body class="bg-gray-100 flex items-center justify-center min-h-screen">
-                <a href="https://untar.ac.id/2024/06/03/kolaborasi-manusia-dan-ai-jadi-masa-depan-dunia-kerja/" 
-                   class="text-blue-600 hover:text-blue-800 font-medium underline decoration-blue-600 hover:decoration-2 focus:outline-none focus:ring focus:ring-blue-400 rounded">
-                  Klik di sini untuk selengkapnya
-                </a>
-              </body>
-
+            <div class="mb-4">
+                <label for="pengalaman_kerja" class="block text-gray-700 font-medium mb-2">Pengalaman Kerja</label>
+                <textarea id="pengalaman_kerja" name="pengalaman_kerja" class="w-full border border-gray-300 rounded-md p-2 focus:ring focus:ring-blue-300"></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="alamat" class="block text-gray-700 font-medium mb-2">Alamat</label>
+                <textarea id="alamat" name="alamat" class="w-full border border-gray-300 rounded-md p-2 focus:ring focus:ring-blue-300"></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="keahlian" class="block text-gray-700 font-medium mb-2">Keahlian</label>
+                <select id="keahlian" name="keahlian" class="w-full border border-gray-300 rounded-md p-2 focus:ring focus:ring-blue-300">
+                    <option value="">- Pilih Keahlian Anda -</option>
+                    <option value="database">Database</option>
+                    <option value="desain">Desain</option>
+                    <option value="figma">Figma</option>
+                </select>
+            </div>
+            <div class="text-right">
+                <input type="submit" name="simpan" value="Simpan Data" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+            </div>
+        </form>
+    </div>
+</div>
+</div>
 </body>
+
 </html>
