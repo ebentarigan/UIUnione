@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unione</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* Perbaikan z-index untuk dropdown */
+        #user-dropdown {
+            z-index: 1000;
+        }
+
+        /* Pastikan carousel berada di belakang dropdown */
+        #carousel {
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-white ">
+    <!-- Header -->
+    <header>
+        
+        <nav class="flex  items-center fixed w-full justify-between p-2 bg-black ">
+            <!-- Logo -->
+            <div class="Logo">
+                <img src="img/logoputihtest.png" alt="Logo Website" width="80" />
+            </div>
+
+            <!-- Search Bar -->
+            <div class="flex items-center space-x-2 flex-grow ml-4 max-w-full">
+                <input type="search"
+                    class="p-1 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                    placeholder="Search..." />
+                <button class="p-1.5 text-white bg-ghost rounded-full hover:bg-ghost transition duration-200 text-xs">
+                    <i class="ri-search-line text-white"></i>
+                </button>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="flex space-x-4 mx-4 text-lg">
+                <li>
+                    <a href="index.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="course">
+                        Course
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="jobs.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="job">
+                        Job
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="community">
+                        Community
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="register.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="news">
+                        News
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+            </ul>
+
+
+            <!-- Profile Section -->
+            <div class="relative flex items-center">
+
+                <!-- Profile Button -->
+                <button type="button"
+                    class="flex items-center space-x-2 text-sm text-white focus:outline-none px-3 py-2  bg-ghost rounded-md"
+                    id="user-menu-button">
+                    <img class="w-8 h-8 rounded-full object-cover object-center"
+                        src="https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="User Photo">
+                    <span class="hidden sm:block text-sm">Eben Tarigan</span>
+                </button>
+
+
+                <!-- Dropdown Menu -->
+                <div id="user-dropdown"
+                    class="absolute right-0 hidden w-40 text-sm list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                    style="top: 40px;">
+                    <div class="px-3 py-2">
+                        <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                        <span class="block text-xs text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                    </div>
+                    <ul class="py-1">
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Dashboard</a>
+                        </li>
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Settings</a>
+                        </li>
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Earnings</a>
+                        </li>
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200"><i
+                                    class="ri-logout-box-line mr-2"></i>Sign
+                                out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Script -->
+    <script>
+        const userMenuButton = document.getElementById('user-menu-button');
+        const userDropdown = document.getElementById('user-dropdown');
+
+        // Toggle dropdown visibility on button click
+        userMenuButton.addEventListener('click', () => {
+            userDropdown.classList.toggle('hidden');
+        });
+
+        // Hide dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!userMenuButton.contains(event.target) && !userDropdown.contains(event.target)) {
+                userDropdown.classList.add('hidden');
+            }
+        });
+    
+    
+    </script>
+    
+
+    <!-- Navbar End -->
+
+    <!-- Right Sidebar Container -->
+<div class="w-full  flex flex-col  ">
+    <!-- Right Sidebar 1 -->
+    <div class=" bg-gray border border-50 w-80 h-full shadow-lg p-4 fixed top-20 ">
+      
+      <!-- Scrollable content starts here -->
+      <div class="space-y-4 bg-white overflow-auto border border-50 rounded-lg h-full shadow-lg p-2 ">
+       
+ <form class="max-w-md mx-auto">   
+    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+    <div class="relative">
+        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+        </div>
+        <input type="search" id="default-search" class="block w-full p-3 ps-10 text-sm text-gray-900 border border-gray-50 shadow-md rounded-lg bg-gray-50  " placeholder="Search" required />
+    </div>
+ </form>
+ 
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center">
+            <img src="img/fotoL1.jpg" alt="Profile" class="w-10 h-10 rounded-full">
+            <div class="ml-3">
+              <p class="font-semibold font ">Brandon Sanjaya</p>
+              <p class="text-xs text-gray-500">Hallo ben</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center">
+            <img src="img/fotoc3.jpg" alt="Profile" class="w-10 h-10 rounded-full">
+            <div class="ml-3">
+              <p class="font-semibold ">Payii</p>
+              <p class="text-xs text-gray-500">Where are you</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center">
+            <img src="img/fotol4.jpg" alt="Profile" class="w-10 h-10 rounded-full">
+            <div class="ml-3">
+              <p class="font-semibold">Asep Tatang</p>
+              <p class="text-xs text-gray-500">P</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center">
+            <img src="img/fotoll2.jpg" alt="Profile" class="w-10 h-10 rounded-full">
+            <div class="ml-3">
+              <p class="font-semibold">Leonardo</p>
+              <p class="text-xs text-gray-500">Information Student at Telkom University</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center">
+            <img src="img/fotol3.jpg" alt="Profile" class="w-10 h-10 rounded-full">
+            <div class="ml-3">
+              <p class="font-semibold">Memet</p>
+              <p class="text-xs text-gray-500">Telkom University</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center">
+            <img src="img/fotoc1.jpg" alt="Profile" class="w-10 h-10 rounded-full">
+            <div class="ml-3">
+              <p class="font-semibold">Vior</p>
+              <p class="text-xs text-gray-500">its okey</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center">
+            <img src="img/fotol1 (2).jpg" alt="Profile" class="w-10 h-10 rounded-full">
+            <div class="ml-3">
+              <p class="font-semibold">Mimit</p>
+              <p class="text-xs text-gray-500">Hmmmmmmm</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center">
+            <img src="img/starbucks.png" alt="Profile" class="w-10 h-10 rounded-full">
+            <div class="ml-3">
+              <p class="font-semibold">Bilkis</p>
+              <p class="text-xs text-gray-500">hahahahahaha</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b pb-4">
+          <div class="flex items-center">
+            <img src="img/fotol1 (2).jpg" alt="Profile" class="w-10 h-10 rounded-full">
+            <div class="ml-3">
+              <p class="font-semibold">Ibin</p>
+              <p class="text-xs text-gray-500">Information Student </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+ 
+ <!--Chat-->
+ 
+ <div class="flex items-start gap-2.5 px-80 m-4 mt-20">
+   <img class="w-8 h-8 rounded-full" src="img/peopleprofile1.jpeg" alt="Jese image">
+   <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4  rounded-e-xl rounded-es-xl dark:bg-black shadow-lg">
+      <div class="flex items-center space-x-2 rtl:space-x-reverse">
+         <span class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</span>
+         <span class="text-sm font-normal text-gray-500 dark:text-gray-400">11:46</span>
+      </div>
+      <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white">HI ben how are you ?.</p>
+      <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+   </div>
+   <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" data-dropdown-placement="bottom-start" class="inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600" type="button">
+      <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
+         <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+      </svg>
+   </button>
+   <div id="dropdownDots" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-40 dark:bg-gray-700 dark:divide-gray-600">
+      <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
+         <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reply</a>
+         </li>
+         <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Forward</a>
+         </li>
+         <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Copy</a>
+         </li>
+         <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
+         </li>
+         <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
+         </li>
+      </ul>
+   </div>
+ </div>
+ 
+ 
+ 
+ 
+ <!--Chat 2-->
+ <div class="flex justify-end pe-5 items-start px-80 m-4 gap-2.5">
+   
+    <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4  shadow-lg border border-gray-200 bg-gray-100 rounded-lg  dark:bg-white">
+       <div class="flex items-center space-x-2 rtl:space-x-reverse">
+          <span class="text-sm font-semibold text-gray-900 dark:text-black">Eben Tarigan</span>
+          <span class="text-sm font-normal text-gray-500 dark:text-gray-400">11:46</span>
+       </div>
+       <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-black">Im fine </p>
+       <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+    </div>
+    <img class="w-8 h-8 rounded-full" src="img/fotol4.jpg" alt="Jese image">
+    </div>
+ </div>
+  <!--chat 3-->
+ 
+  <div class="flex items-start gap-2.5 px-80 m-4">
+   <img class="w-8 h-8 rounded-full" src="img/peopleprofile1.jpeg" alt="Jese image">
+   <div class="flex flex-col gap-2.5 w-full max-w-[320px] leading-1.5 p-4  rounded-e-xl rounded-es-xl dark:bg-black">
+      <div class="flex items-center space-x-2 rtl:space-x-reverse">
+         <span class="text-sm font-semibold text-gray-900 dark:text-white">Bonnie Green</span>
+         <span class="text-sm font-normal text-gray-500 dark:text-gray-400">11:46</span>
+      </div>
+      <div class="flex items-center space-x-2 rtl:space-x-reverse">
+         <button class="inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-gray-100 rounded-lg hover:bg-gray-200 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-600" type="button">
+            <svg class="w-4 h-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 16">
+               <path d="M3 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm7 0H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+            </svg>
+         </button>
+         <svg aria-hidden="true" class="w-[145px] md:w-[185px] md:h-[40px]" viewBox="0 0 185 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect y="17" width="3" height="6" rx="1.5" fill="#6B7280" class="dark:fill-white"/>
+            <rect x="7" y="15.5" width="3" height="9" rx="1.5" fill="#6B7280" class="dark:fill-white"/>
+            <rect x="21" y="6.5" width="3" height="27" rx="1.5" fill="#6B7280" class="dark:fill-white"/>
+            <rect x="14" y="6.5" width="3" height="27" rx="1.5" fill="#6B7280" class="dark:fill-white"/>
+            <rect x="28" y="3" width="3" height="34" rx="1.5" fill="#6B7280" class="dark:fill-white"/>
+            <rect x="35" y="3" width="3" height="34" rx="1.5" fill="#6B7280" class="dark:fill-white"/>
+            <rect x="42" y="5.5" width="3" height="29" rx="1.5" fill="#6B7280" class="dark:fill-white"/>
+            <rect x="49" y="10" width="3" height="20" rx="1.5" fill="#6B7280" class="dark:fill-white"/>
+            <rect x="56" y="13.5" width="3" height="13" rx="1.5" fill="#6B7280" class="dark:fill-white"/>
+            <rect x="63" y="16" width="3" height="8" rx="1.5" fill="#6B7280" class="dark:fill-white"/>
+            <rect x="70" y="12.5" width="3" height="15" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="77" y="3" width="3" height="34" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="84" y="3" width="3" height="34" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="91" y="0.5" width="3" height="39" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="98" y="0.5" width="3" height="39" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="105" y="2" width="3" height="36" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="112" y="6.5" width="3" height="27" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="119" y="9" width="3" height="22" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="126" y="11.5" width="3" height="17" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="133" y="2" width="3" height="36" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="140" y="2" width="3" height="36" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="147" y="7" width="3" height="26" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="154" y="9" width="3" height="22" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="161" y="9" width="3" height="22" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="168" y="13.5" width="3" height="13" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="175" y="16" width="3" height="8" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="182" y="17.5" width="3" height="5" rx="1.5" fill="#E5E7EB" class="dark:fill-gray-500"/>
+            <rect x="66" y="16" width="8" height="8" rx="4" fill="#1C64F2"/>
+         </svg>
+         <span class="inline-flex self-center items-center p-2 text-sm font-medium text-gray-900 dark:text-white">3:42</span>
+      </div>
+      <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+   </div>
+   <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" data-dropdown-placement="bottom-start" class="flex-shrink-0 inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600" type="button">
+      <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
+         <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+      </svg>
+   </button>
+   <div id="dropdownDots" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-40 dark:bg-gray-700 dark:divide-gray-600">
+      <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
+         <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reply</a>
+         </li>
+         <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Forward</a>
+         </li>
+         <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Copy</a>
+         </li>
+         <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
+         </li>
+         <li>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delete</a>
+         </li>
+      </ul>
+   </div>
+ </div>
+ 
+ 
+ 
+ 
+<form>
+    <label for="chat" class="sr-only">Your message</label>
+    <div class="flex items-center px-3 py-2  me-10 ms-96 border border-50  shadow-lg rounded-lg bg-gray-50 dark:bg-white ">
+        <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 18">
+                <path fill="currentColor" d="M13 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0ZM7.565 7.423 4.5 14h11.518l-2.516-3.71L11 13 7.565 7.423Z"/>
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 1H2a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1Z"/>
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0ZM7.565 7.423 4.5 14h11.518l-2.516-3.71L11 13 7.565 7.423Z"/>
+            </svg>
+            <span class="sr-only">Upload image</span>
+        </button>
+        <button type="button" class="p-2 text-gray-500 rounded-lg cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.408 7.5h.01m-6.876 0h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM4.6 11a5.5 5.5 0 0 0 10.81 0H4.6Z"/>
+            </svg>
+            <span class="sr-only">Add emoji</span>
+        </button>
+        <textarea id="chat" rows="1" class="block mx-4 p-2.5 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-200  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
+            <button type="submit" class="inline-flex justify-center p-2 text-blue-600 rounded-full cursor-pointer hover:bg-blue-100 dark:text-blue-500 dark:hover:bg-gray-600">
+            <svg class="w-5 h-5 rotate-90 rtl:-rotate-90" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                <path d="m17.914 18.594-8-18a1 1 0 0 0-1.828 0l-8 18a1 1 0 0 0 1.157 1.376L8 18.281V9a1 1 0 0 1 2 0v9.281l6.758 1.689a1 1 0 0 0 1.156-1.376Z"/>
+            </svg>
+            <span class="sr-only">Send message</span>
+        </button>
+    </div>
+</form>
+     </body>
+     <footer class="bg-black text-white py-4">
+      <div class="container mx-auto text-center">
+        <p class="text-sm">&copy; 2025 Unione. All rights reserved.</p>
+      </div>
+    </footer>
+</html>
