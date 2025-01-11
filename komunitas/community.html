@@ -1,262 +1,302 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Community</title>
-      <link rel="stylesheet" href="../style.css" />
-      <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-      <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body class="overflow-x-hidden max-w-screen">
+<html lang="en">
 
-<header>
-        <nav class="flex items-center justify-between p-2 bg-black top-0 fixed w-full shadow-md z-50">
-            <!-- Logo -->
-            <div class="Logo">
-                <img src="../img/logoputihtest.png" alt="Logo Website" width="80" />
-            </div>
-
-            <!-- Search Bar -->
-            <div class="flex items-center space-x-2 flex-grow ml-4 max-w-full">
-                <input type="search"
-                    class="p-1 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                    placeholder="Search..." />
-                <button class="p-1.5 text-white bg-ghost rounded-full hover:bg-ghost transition duration-200 text-xs">
-                    <i class="ri-search-line text-white"></i>
-                </button>
-            </div>
-            <!-- Navigation Links -->
-            <ul class="flex space-x-4 mx-4 text-lg">
-                <li>
-                    <a href="course.html" class="text-white-400" id="job">
-                        course
-                    </a>
-                </li>
-                <li>
-                    <a href="../jobs.html"
-                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
-                        id="job">
-                        Job
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="contact.html"
-                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
-                        id="community">
-                        Community
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="register.html"
-                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
-                        id="news">
-                        News
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                    </a>
-                </li>
-            </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <title>Social Media Design</title>
+  <style>
+    /* Navbar selalu di depan */
 
 
-            <!-- Profile Section -->
-            <div class="relative flex items-center">
-                <!-- Profile Button -->
-                <button type="button"
-                    class="flex items-center space-x-2 text-sm text-white focus:outline-none px-3 py-2  bg-ghost rounded-md"
-                    id="user-menu-button">
-                    <img class="w-8 h-8 rounded-full object-cover object-center"
-                        src="https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="User Photo">
-                    <span class="hidden sm:block text-sm">Eben Tarigan</span>
-                </button>
+    /* Perbaikan z-index untuk dropdown */
+    #user-dropdown {
+    z-index: 1100;
+    top: 100%;  /* Menjaga dropdown berada tepat di bawah tombol */
+    right: 0;   /* Posisi dropdown mengikuti tombol di sisi kanan */
+    margin-top: 8px;  /* Memberikan sedikit jarak antara tombol dan dropdown */
+}
 
+  </style>
+</head>
+<!--navigasi-->
 
-                <!-- Dropdown Menu -->
-                <div id="user-dropdown"
-                    class="absolute right-0 hidden w-40 text-sm list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
-                    style="top: 40px;">
-                    <div class="px-3 py-2">
-                        <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-                        <span class="block text-xs text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
-                    </div>
-                    <ul class="py-1">
-                        <li><a href="#"
-                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Dashboard</a>
-                        </li>
-                        <li><a href="#"
-                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Settings</a>
-                        </li>
-                        <li><a href="#"
-                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Earnings</a>
-                        </li>
-                        <li><a href="#"
-                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200"><i
-                                    class="ri-logout-box-line mr-2"></i>Sign
-                                out</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-<!--Content utama-->
-     <!--class="bg-gray-100 text-gray-900" style="padding-top: 60px;"-->
-      <div class="bg-white my-10 shadow-md mt-16"> <!--latar putih dan bayangan halus pada header-->
-        <div class="max-w-6xl mx-auto p-6 flex justify-between items-center">
-          <div class="flex items-center space-x-4"> <!--elemen di dalammnya di tata dengan flexbox secara horizontal-->
-            <img src="../img/grup2.jpg" alt="Logo" class="w-10 h-10 rounded-full">
-            <h1 class="text-2xl font-bold text-gray-800">We Are Friends</h1>
+<body class="overflow-x- max-w-screen ">
+  <header>
+    <nav class="flex items-center justify-between p-4 bg-black h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="../img/logoputihtest.png" alt="Logo Website" class="h-10" />
+      </div>
+
+      <!-- Search Bar -->
+      <div class="flex items-center space-x-2 flex-grow ml-4 max-w-full">
+        <input type="search"
+          class="p-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+          placeholder="Search..." />
+        <button class="p-2 text-white bg-ghost rounded-full hover:bg-gray-600 transition duration-200 text-xs">
+          <i class="ri-search-line text-white"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="flex space-x-6 text-lg text-white">
+        <li>
+          <a href="course.html" class="relative group hover:text-gray-400">
+            Course
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </li>
+        <li>
+          <a href="jobs.html" class="relative group hover:text-gray-400">
+            Job
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </li>
+        <li>
+          <a href="komunitas/community.html" class="relative group hover:text-gray-400">
+            Community
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </li>
+        <li>
+          <a href="register.html" class="relative group hover:text-gray-400">
+            News
+            <span
+              class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Profile Section -->
+      <div class="relative flex items-center">
+        <!-- Profile Button -->
+        <button type="button"
+          class="flex items-center space-x-2 text-sm text-white px-4 py-2 rounded-md hover:bg-gray-700"
+          id="user-menu-button">
+          <img class="w-8 h-8 rounded-full object-cover object-center"
+            src="https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="User Photo" />
+          <span class="hidden sm:block text-sm">Eben Tarigan</span>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="user-dropdown" class="absolute right-0 hidden w-40 bg-gray-600 text-sm rounded-lg shadow-lg mt-20">
+          <div class="px-3 py-2">
+            <a href="profileawal.html" class="block text-sm text-white">Eben Tarigan</a>
+            <a class="block text-xs text-gray-500">name@flowbite.com</a>
           </div>
-          <div>
-           <!--hover mengganti latar abu menjadi gelap-->
-            <button class="bg-blue-500 text-white-700 px-4 py-2 rounded hover:bg-gray-400">Open Chat</button>
+          <ul class="py-1">
+            <li><a href="#"
+                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">
+                <i class="ri-message-2-line mr-2"></i>Message</a>
+            </li>
+            <li><a href="setting.html"
+                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">
+                <i class="ri-settings-3-line mr-2"></i>Settings</a>
+            </li>
+            <li><a href="FAQ.html"
+                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">
+                <i class="ri-question-line mr-2"></i>FAQ</a>
+            </li>
+            <li>
+              <a href="notification.html"
+                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">
+                <i class="ri-notification-line mr-2"></i>Notifications
+              </a>
+            </li>
+            </li>
+            <li><a href="index.html"
+                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">
+                <i class="ri-logout-box-line mr-2"></i>Sign out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <script>
+    const userMenuButton = document.getElementById('user-menu-button');
+    const userDropdown = document.getElementById('user-dropdown');
+
+    // Toggle dropdown visibility on button click
+    userMenuButton.addEventListener('click', () => {
+      userDropdown.classList.toggle('hidden');
+    });
+
+    // Hide dropdown when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!userMenuButton.contains(event.target) && !userDropdown.contains(event.target)) {
+        userDropdown.classList.add('hidden');
+      }
+    });
+  </script>
+
+  <!--Content utama-->
+
+  <div class="bg-white mt-4 shadow-md pt-3"> <!--latar putih dan bayangan halus pada header-->
+    <div class="max-w-6xl mx-auto p-6 flex justify-between items-center">
+      <div class="flex items-center space-x-4"> <!--elemen di dalammnya di tata dengan flexbox secara horizontal-->
+        <img src="../img/grup2.jpg" alt="Logo" class="w-10 h-10 rounded-full">
+        <h1 class="text-2xl font-bold text-gray-800">We Are Friends</h1>
+      </div>
+      <div>
+        <!--hover mengganti latar abu menjadi gelap-->
+        <button class="bg-blue-500 text-white-700 px-4 py-2 rounded hover:bg-gray-400">Open Chat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="max-w-6xl mx-auto p-6">
+    <div class="mb-8">
+      <h6 class="text-gray-700">
+        Our mission at TechConnect is to cultivate a dynamic and inclusive community where tech enthusiasts of all
+        backgrounds come together to team, share, and innovate. From seasoned developers to curious hobbyists, we
+        provide a space to engage in discussions on cutting-edge technologies, access valuable resources, showcase
+        projects, and participate in coding challenges and workshops...
+      </h6>
+    </div>
+
+    <!-- Post Section -->
+    <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+      <div class="flex items-center mb-6"> <!--layout horizontal dan margin 6-->
+        <img src="../img/profil6.jpg" alt="User Image" class="w-12 h-12 rounded-full">
+        <div class="ml-4">
+          <h2 class="text-lg font-semibold">Jericho Yeremia</h2>
+          <p class="text-gray-500 text-sm">Data Science Student at Telkom University</p>
+        </div>
+      </div>
+      <p class="mb-4">Me with my great team</p>
+      <img src="../img/posting1.jpg" alt="Team Photo" class="w-full rounded-lg">
+      <div class="flex justify-between items-center mt-4 text-gray-600">
+        <div class="flex space-x-4">
+          <button class="hover:text-blue-600 flex items-center space-x-1">
+            <i class="ri-heart-line"></i>
+            <span class="text-gray-500 font-medium">Like</span>
+          </button>
+          <button class="hover:text-blue-600 flex items-center space-x-1">
+            <i class="ri-share-line"></i>
+            <span class="text-gray-500 font-medium">Share</span>
+          </button>
+          <button class="hover:text-blue-600 flex items-center space-x-1">
+            <i class="ri-chat-1-line"></i>
+            <span class="text-gray-500 font-medium">Comment</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Post Section -->
+    <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+      <div class="flex items-center mb-6"> <!--layout horizontal dan margin 6-->
+        <img src="../img/fotoC1 (2).jpg" alt="User Image" class="w-12 h-12 rounded-full">
+        <div class="ml-4">
+          <h2 class="text-lg font-semibold">Dalia Mora</h2>
+          <p class="text-gray-500 text-sm">Data Science Student at Telkom University</p>
+        </div>
+      </div>
+      <p class="mb-4">Success isn't always about greatness. It's about consistency. Consistent hard work leads to
+        success. Greatness will come</p>
+      <img src="../img/fotoo1.jpg" alt="Team Photo" class="w-full rounded-lg">
+      <div class="flex justify-between items-center mt-4 text-gray-600">
+        <div class="flex space-x-4">
+          <button class="hover:text-blue-600 flex items-center space-x-1">
+            <i class="ri-heart-line"></i>
+            <span class="text-gray-500 font-medium">Like</span>
+          </button>
+          <button class="hover:text-blue-600 flex items-center space-x-1">
+            <i class="ri-share-line"></i>
+            <span class="text-gray-500 font-medium">Share</span>
+          </button>
+          <button class="hover:text-blue-600 flex items-center space-x-1">
+            <i class="ri-chat-1-line"></i>
+            <span class="text-gray-500 font-medium">Comment</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Post Section -->
+    <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+      <div class="flex items-center mb-6"> <!--layout horizontal dan margin 6-->
+        <img src="../img/fotoc4.jpg" alt="User Image" class="w-12 h-12 rounded-full">
+        <div class="ml-4">
+          <h2 class="text-lg font-semibold">Gracyla Auli</h2>
+          <p class="text-gray-500 text-sm">Data Science Student at Telkom University</p>
+        </div>
+      </div>
+      <p class="mb-4">One day, you will have everything you wish for. Start working towards it today</p>
+      <img src="../img/posting5.jpg" alt="Team Photo" class="w-full rounded-lg">
+      <div class="flex justify-between items-center mt-4 text-gray-600">
+        <div class="flex space-x-4">
+          <button class="hover:text-blue-600 flex items-center space-x-1">
+            <i class="ri-heart-line"></i>
+            <span class="text-gray-500 font-medium">Like</span>
+          </button>
+          <button class="hover:text-blue-600 flex items-center space-x-1">
+            <i class="ri-share-line"></i>
+            <span class="text-gray-500 font-medium">Share</span>
+          </button>
+          <button class="hover:text-blue-600 flex items-center space-x-1">
+            <i class="ri-chat-1-line"></i>
+            <span class="text-gray-500 font-medium">Comment</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Suggestions Section -->
+
+    <div class="space-y-4 overflow-auto h-36 border p-2">
+      <div class="bg-white shadow-md rounded-lg p-6 sticky"> <!--latar belakang putih,bayang,sudut bulat-->
+        <h2 class="text-lg font-semibold mb-4">Member</h2>
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+              <img src="../img/fotoC1 (2).jpg" alt="User Image" class="w-10 h-10 rounded-full">
+              <div>
+                <h3 class="text-gray-800 font-medium">Dalia Mora</h3>
+                <p class="text-sm text-gray-500">Informatics Student at Telkom University</p>
+              </div>
+            </div>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Follow</button>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+              <img src="../img/fotoL1.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+              <div>
+                <h3 class="text-gray-800 font-medium">Bryan Austin</h3>
+                <p class="text-sm text-gray-500">Business Admin Student at Telkom University</p>
+              </div>
+            </div>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Follow</button>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+              <img src="../img/fotoc4.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+              <div>
+                <h3 class="text-gray-800 font-medium">Gracyla Auli</h3>
+                <p class="text-sm text-gray-500">Informatics Student at Telkom University</p>
+              </div>
+            </div>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Follow</button>
           </div>
         </div>
       </div>
-    
-      <!-- Main Content -->
-      <div class="max-w-6xl mx-auto p-6">
-        <div class="mb-8">
-          <h6 class="text-gray-700">
-            Our mission at TechConnect is to cultivate a dynamic and inclusive community where tech enthusiasts of all backgrounds come together to team, share, and innovate. From seasoned developers to curious hobbyists, we provide a space to engage in discussions on cutting-edge technologies, access valuable resources, showcase projects, and participate in coding challenges and workshops...
-          </h6>
-        </div>
-    
-        <!-- Post Section -->
-        <div class="bg-white shadow-md rounded-lg p-6 mb-8">
-          <div class="flex items-center mb-6"> <!--layout horizontal dan margin 6-->
-            <img src="../img/profil6.jpg" alt="User Image" class="w-12 h-12 rounded-full">
-            <div class="ml-4">
-              <h2 class="text-lg font-semibold">Jericho Yeremia</h2>
-              <p class="text-gray-500 text-sm">Data Science Student at Telkom University</p>
-            </div>
-          </div>
-          <p class="mb-4">Me with my great team</p>
-          <img src="../img/posting1.jpg" alt="Team Photo" class="w-full rounded-lg">
-          <div class="flex justify-between items-center mt-4 text-gray-600">
-            <div class="flex space-x-4">
-              <button class="hover:text-blue-600 flex items-center space-x-1">
-                <i class="ri-heart-line"></i>
-                <span class="text-gray-500 font-medium">Like</span>
-              </button>
-              <button class="hover:text-blue-600 flex items-center space-x-1">
-                <i class="ri-share-line"></i>
-                <span class="text-gray-500 font-medium">Share</span>
-              </button>
-              <button class="hover:text-blue-600 flex items-center space-x-1">
-                <i class="ri-chat-1-line"></i>
-                <span class="text-gray-500 font-medium">Comment</span>
-              </button>
-            </div>
-          </div>
-        </div>
-              
+    </div>
+  </div>
+</body>
 
-
-        <!-- Post Section -->
-        <div class="bg-white shadow-md rounded-lg p-6 mb-8">
-          <div class="flex items-center mb-6"> <!--layout horizontal dan margin 6-->
-            <img src="../img/fotoC1 (2).jpg" alt="User Image" class="w-12 h-12 rounded-full">
-            <div class="ml-4">
-              <h2 class="text-lg font-semibold">Dalia Mora</h2>
-              <p class="text-gray-500 text-sm">Data Science Student at Telkom University</p>
-            </div>
-          </div>
-          <p class="mb-4">Success isn't always about greatness. It's about consistency. Consistent hard work leads to success. Greatness will come</p>
-          <img src="../img/fotoo1.jpg" alt="Team Photo" class="w-full rounded-lg">
-          <div class="flex justify-between items-center mt-4 text-gray-600">
-            <div class="flex space-x-4">
-              <button class="hover:text-blue-600 flex items-center space-x-1">
-                <i class="ri-heart-line"></i>
-                <span class="text-gray-500 font-medium">Like</span>
-              </button>
-              <button class="hover:text-blue-600 flex items-center space-x-1">
-                <i class="ri-share-line"></i>
-                <span class="text-gray-500 font-medium">Share</span>
-              </button>
-              <button class="hover:text-blue-600 flex items-center space-x-1">
-                <i class="ri-chat-1-line"></i>
-                <span class="text-gray-500 font-medium">Comment</span>
-              </button>
-            </div>
-          </div>
-        </div>
-              
-
-         <!-- Post Section -->
-         <div class="bg-white shadow-md rounded-lg p-6 mb-8">
-          <div class="flex items-center mb-6"> <!--layout horizontal dan margin 6-->
-            <img src="../img/fotoc4.jpg" alt="User Image" class="w-12 h-12 rounded-full">
-            <div class="ml-4">
-              <h2 class="text-lg font-semibold">Gracyla Auli</h2>
-              <p class="text-gray-500 text-sm">Data Science Student at Telkom University</p>
-            </div>
-          </div>
-          <p class="mb-4">One day, you will have everything you wish for. Start working towards it today</p>
-          <img src="../img/posting5.jpg" alt="Team Photo" class="w-full rounded-lg">
-          <div class="flex justify-between items-center mt-4 text-gray-600">
-            <div class="flex space-x-4">
-              <button class="hover:text-blue-600 flex items-center space-x-1">
-                <i class="ri-heart-line"></i>
-                <span class="text-gray-500 font-medium">Like</span>
-              </button>
-              <button class="hover:text-blue-600 flex items-center space-x-1">
-                <i class="ri-share-line"></i>
-                <span class="text-gray-500 font-medium">Share</span>
-              </button>
-              <button class="hover:text-blue-600 flex items-center space-x-1">
-                <i class="ri-chat-1-line"></i>
-                <span class="text-gray-500 font-medium">Comment</span>
-              </button>
-            </div>
-          </div>
-        </div>
-              
-    
-        <!-- Suggestions Section -->
-         
-        <div class="space-y-4 overflow-auto h-36 border p-2">
-        <div class="bg-white shadow-md rounded-lg p-6 sticky"> <!--latar belakang putih,bayang,sudut bulat-->
-          <h2 class="text-lg font-semibold mb-4">Member</h2>
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center space-x-4">
-                <img src="../img/fotoC1 (2).jpg" alt="User Image" class="w-10 h-10 rounded-full">
-                <div>
-                  <h3 class="text-gray-800 font-medium">Dalia Mora</h3>
-                  <p class="text-sm text-gray-500">Informatics Student at Telkom University</p>
-                </div>
-              </div>
-              <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Follow</button>
-            </div>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center space-x-4">
-                <img src="../img/fotoL1.jpg" alt="User Image" class="w-10 h-10 rounded-full">
-                <div>
-                  <h3 class="text-gray-800 font-medium">Bryan Austin</h3>
-                  <p class="text-sm text-gray-500">Business Admin Student at Telkom University</p>
-                </div>
-              </div>
-              <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Follow</button>
-            </div>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center space-x-4">
-                <img src="../img/fotoc4.jpg" alt="User Image" class="w-10 h-10 rounded-full">
-                <div>
-                  <h3 class="text-gray-800 font-medium">Gracyla Auli</h3>
-                  <p class="text-sm text-gray-500">Informatics Student at Telkom University</p>
-                </div>
-              </div>
-              <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Follow</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </body>
-    </body>
-    </html>
+</html>
