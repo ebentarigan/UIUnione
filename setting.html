@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unione</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
         /* Perbaikan z-index untuk dropdown */
@@ -20,10 +23,11 @@
     </style>
 </head>
 
-<body class="bg-white">
+<body class="bg-white ">
     <!-- Header -->
     <header>
-        <nav class="flex items-center justify-between p-2 bg-black">
+        
+        <nav class="flex  items-center fixed w-full justify-between p-2 top-0 bg-black ">
             <!-- Logo -->
             <div class="Logo">
                 <img src="img/logoputihtest.png" alt="Logo Website" width="80" />
@@ -41,12 +45,16 @@
             <!-- Navigation Links -->
             <ul class="flex space-x-4 mx-4 text-lg">
                 <li>
-                    <a href="course.html" class="text-gray-400" id="job">
-                        course
+                    <a href="index.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="course">
+                        Course
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="../jobs.html"
+                    <a href="jobs.html"
                         class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
                         id="job">
                         Job
@@ -77,6 +85,7 @@
 
             <!-- Profile Section -->
             <div class="relative flex items-center">
+
                 <!-- Profile Button -->
                 <button type="button"
                     class="flex items-center space-x-2 text-sm text-white focus:outline-none px-3 py-2  bg-ghost rounded-md"
@@ -132,86 +141,71 @@
                 userDropdown.classList.add('hidden');
             }
         });
-
-        // Modal functionality
-        const openModalBtn = document.getElementById('openModalBtn');
-        const modal = document.getElementById('modal');
-        const closeModalBtn = document.getElementById('closeModalBtn');
-
-        // Open modal when Info Selengkapnya button is clicked
-        openModalBtn.addEventListener('click', () => {
-            modal.classList.remove('hidden');
-        });
-
-        // Close modal when 'Tutup' button is clicked
-        closeModalBtn.addEventListener('click', () => {
-            modal.classList.add('hidden');
-        });
-
-        // Close modal if clicked outside of modal content
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.add('hidden');
-            }
-        });
+    
     </script>
+    
+    <!-- Navbar End -->
 
-    <!-- Carousel Section -->
-    <div class="relative w-full h-[384px] overflow-hidden">
-        <div class="flex transition-transform duration-700 ease-in-out" id="carousel">
-            <!-- Slide 1 -->
-            <div class="flex-shrink-0 w-full">
-                <img src="../img/header-kursus2.jpg" alt="Slide 1" class="w-full h-auto">
-            </div>
-            <!-- Slide 2 -->
-            <div class="flex-shrink-0 w-full">
-                <img src="../img/header-kursus2.jpg" alt="Slide 2" class="w-full h-auto">
-            </div>
-            <!-- Slide 3 -->
-            <div class="flex-shrink-0 w-full">
-                <img src="../img/header-kursus2.jpg" alt="Slide 3" class="w-full h-auto">
-            </div>
-        </div>
+    
+    <div class="flex  justify-center m-5 mt-20">
+        <div class="w-full bg-white rounded-lg shadow-lg p-4  border border-50">
+            <h1 class="text-2xl font-bold text-center mb-6">Settings</h1>
+
+            
+<div id="accordion-collapse" data-accordion="collapse">
+    <h2 id="accordion-collapse-heading-1">
+      <button type="button" class="flex items-center justify-between w-full p-5 font-medium  border border-50  rounded-t-lg hover:bg-gray-100 " data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
+        <span>Notification Settings </span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+      </button>
+    </h2>
+    <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
+      <div class="p-5 border darkborder-gray-50 dark:bg-white">
+        <p class="mb-2 text-gray-500 dark:text-gray-400">Types of notifications (email, SMS, push notifications).</p>
+        <p class="mb-2 text-gray-500 dark:text-gray-400">Frequency of notifications.</p>
+        <p class="mb-2 text-gray-500 dark:text-gray-400">Specific notifications (e.g., only for new messages or friend requests).</p>
+      </div>
     </div>
-
-    <!-- Course Section -->
-    <h1 class="text-2xl font-bold flex items-center space-x-4 mt-4 ml-6">Daftar Kursus</h1>
-
-    <!-- Course Cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-            <img class="w-full"
-                src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Card image">
-            <div class="px-6 py-4">
-                <h2 class="font-bold text-xl mb-4">Belajar Pemograman untuk pemula</h2>
-                <div class="flex items-center space-x-3">
-                    <img class="w-10 h-10 rounded-full object-cover"
-                        src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt="Profile picture">
-                    <h3 class="font-bold text-xl mb-4 mt-3">Alan Suryajana</h3>
-                </div>
-                <p class="text-gray-700 text-base mt-2">Ingin belajar dasar pemograman disini tempatnya</p>
-            </div>
-            <div class="px-6 pt-3 pb-4 flex justify-between items-center">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Cek sekarang</button>
-                <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500" id="openModalBtn">Info Selengkapnya</button>
-            </div>
-        </div>
+    <h2 id="accordion-collapse-heading-2">
+      <button type="button" class="flex items-center justify-between w-full p-5 font-medium  border border-50  hover:bg-gray-100 " data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
+        <span>Integration Settings</span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+      </button>
+    </h2>
+    <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+        <div class="p-5 border darkborder-gray-50 dark:bg-white">
+        <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
+        <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+      </div>
     </div>
-
-    <!-- Modal Pop-up -->
-    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
-        <div class="modal-content bg-white p-8 rounded-lg w-3/4 md:w-1/2">
-            <h2 class="text-2xl font-bold mb-4">Informasi Kursus</h2>
-            <p class="text-gray-700 mb-6">Ingin belajar dasar pemograman disini tempatnya. Kursus ini dirancang untuk pemula yang
-                ingin memahami dasar-dasar pemrograman dengan cara yang mudah dan menyenangkan.</p>
-            <div class="flex justify-end">
-                <button id="closeModalBtn" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">Tutup</button>
-            </div>
-        </div>
+    <h2 id="accordion-collapse-heading-3">
+      <button type="button" class="flex items-center justify-between w-full p-5 font-medium  border border-50  hover:bg-gray-100 " data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
+        <span>Admin Settings (for site administrators)</span>
+        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+      </button>
+    </h2>
+    <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+        <div class="p-5 border darkborder-gray-50 dark:bg-white">
+        <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
+        <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
+        <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+        <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+          <li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
+          <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+        </ul>
+      </div>
     </div>
+  </div>
+  
+           
+          </div>
+        </div>
 
-</body>
-
-</html>
+        
+    </body>

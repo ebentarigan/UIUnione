@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unione</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* Perbaikan z-index untuk dropdown */
+        #user-dropdown {
+            z-index: 1000;
+        }
+
+        /* Pastikan carousel berada di belakang dropdown */
+        #carousel {
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-white ">
+    <!-- Header -->
+    <header>
+        
+        <nav class="flex  items-center fixed w-full justify-between p-2 bg-black top-0 z-50">
+            <!-- Logo -->
+            <div class="Logo">
+                <img src="img/logoputihtest.png" alt="Logo Website" width="80" />
+            </div>
+
+            <!-- Search Bar -->
+            <div class="flex items-center space-x-2 flex-grow ml-4 max-w-full">
+                <input type="search"
+                    class="p-1 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                    placeholder="Search..." />
+                <button class="p-1.5 text-white bg-ghost rounded-full hover:bg-ghost transition duration-200 text-xs">
+                    <i class="ri-search-line text-white"></i>
+                </button>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="flex space-x-4 mx-4 text-lg">
+                <li>
+                    <a href="index.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="course">
+                        Course
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="jobs.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="job">
+                        Job
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="community">
+                        Community
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="register.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="news">
+                        News
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+            </ul>
+
+
+            <!-- Profile Section -->
+            <div class="relative flex items-center">
+
+                <!-- Profile Button -->
+                <button type="button"
+                    class="flex items-center space-x-2 text-sm text-white focus:outline-none px-3 py-2  bg-ghost rounded-md"
+                    id="user-menu-button">
+                    <img class="w-8 h-8 rounded-full object-cover object-center"
+                        src="https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="User Photo">
+                    <span class="hidden sm:block text-sm">Eben Tarigan</span>
+                </button>
+
+
+                <!-- Dropdown Menu -->
+                <div id="user-dropdown"
+                    class="absolute right-0 hidden w-40 text-sm list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                    style="top: 40px;">
+                    <div class="px-3 py-2">
+                        <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                        <span class="block text-xs text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                    </div>
+                    <ul class="py-1">
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Dashboard</a>
+                        </li>
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Settings</a>
+                        </li>
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Earnings</a>
+                        </li>
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200"><i
+                                    class="ri-logout-box-line mr-2"></i>Sign
+                                out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Script -->
+    <script>
+        const userMenuButton = document.getElementById('user-menu-button');
+        const userDropdown = document.getElementById('user-dropdown');
+
+        // Toggle dropdown visibility on button click
+        userMenuButton.addEventListener('click', () => {
+            userDropdown.classList.toggle('hidden');
+        });
+
+        // Hide dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!userMenuButton.contains(event.target) && !userDropdown.contains(event.target)) {
+                userDropdown.classList.add('hidden');
+            }
+        });
+    
+    
+    </script>
+    
+
+    <!-- Navbar End -->
+
+    <div class="w-screen p-5 flex flex-col gap-20 mt-20">
+        <div class="flex flex-row justify-between gap-4 ">
+            <div id="default-carousel" class="relative w-full md:w-1/2 " data-carousel="slide">
+                <!-- Carousel wrapper -->
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                     <!-- Item 1 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="img/isijobs1.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="img/isijobs3.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="img/isijobs2.jpeg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="img/isijobs4.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                        <img src="img/isijobs5.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    </div>
+                </div>
+                <!-- Slider indicators -->
+                <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+                    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+                </div>
+                <!-- Slider controls -->
+                <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                        </svg>
+                        <span class="sr-only">Previous</span>
+                    </span>
+                </button>
+                <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                    <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                        </svg>
+                        <span class="sr-only">Next</span>
+                    </span>
+                </button>
+            </div>
+
+            <div class="md:w-1/2 text-center md:text-left border border-50 shadow-lg rounded-lg h-96 w-20">
+                <div class="flex items-center p-2">
+                    <img src="img/isijobslogo.png" alt="Profile" class="w-20 h-20 rounded-full">
+                <h5 class="text-5xl text-black font-bold m-4 ">GOOGLE LLC
+                </h5>
+                <button type="button" class="m-2   text-white rounded-md text-sm px-6 py-1   dark:bg-black dark:hover:bg-blue-300">Apply Now</button>
+                </div>
+                <div class="ml-4">
+                    <p class="text-gray-700  text-sm ">American multinational corporation and technology company focusing on online advertising, search engine technology, cloud computing,computer software, quantum computing, e-commerce, consumer electronics, and artificial intelligence </p>
+                  </div>
+
+<!--Pencarian jobs-->
+                  <div id="controls-carousel" class="relative " data-carousel="static">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-56 overflow-hidden  md:h-60 w-80 m-3 ms-40 flex justify-between ">
+                         <!-- Item 1 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="bg-white rounded-lg border border-50  shadow-lg p-4">
+                                <img src="img/bri.png" alt="Job Image" class="rounded-md w-40 h-20 object-cover mb-3">
+                                <h3 class="text-lg font-bold">PT BANK RAKYAT INDONESIA</h3>
+                              
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                            <div class="bg-white rounded-lg border border-50 shadow-lg p-4">
+                                <img src="img/starbucks.png" alt="Job Image" class="rounded-md w-40 h-20 object-cover mb-3">
+                                <h3 class="text-lg font-bold">STARBUCKS CORPORATION</h3>
+                               
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                                </div>
+                            </div>
+                
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="bg-white rounded-lg border border-50 shadow-lg p-4">
+                                <img src="img/mcd.png" alt="Job Image" class="rounded-md w-40 h-20 object-cover mb-3">
+                                <h3 class="text-lg font-bold">MC DONALD'S CORPORATION</h3>
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                                </div>
+                            </div>
+                    
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="bg-white rounded-lg border border-50 shadow-lg p-4">
+                                <img src="img/samsung.png" alt="Job Image" class="rounded-md w-40 h-20 object-cover mb-3">
+                                <h3 class="text-lg font-bold">SAMSUNG GROUP</h3>
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="text-blue-500 hover:underline ">Lihat Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <div class="bg-white rounded-lg border border-50 shadow-lg p-4">
+                                <img src="img/apple.png" alt="Job Image" class="rounded-md w-40 h-20 object-cover mb-3">
+                                <h3 class="text-lg font-bold">APPLE INC</h3>
+                                <div class="flex justify-between items-center">
+                                    <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                            </svg>
+                            <span class="sr-only">Previous</span>
+                        </span>
+                    </button>
+                    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                            </svg>
+                            <span class="sr-only">Next</span>
+                        </span>
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+
+      <div class="flex justify-between items-center  "></div>
+      <div class="w-full p-5 border border-50 shadow-lg rounded-lg">
+          <h2 class="text-2xl font-bold mb-4">Educational Background:</h2>
+          <p class="text-gray-700">
+              <ul class="list-disc list-inside">
+                  <li>Bachelor's degree in Mathematics, Statistics, Computer Science, Information Technology, or a related field.</li>
+                  <li>Advanced degrees (Master's, Ph.D.) are a plus but not always required.</li>
+              </ul>
+          </p>
+      </div>
+
+      <div class="flex justify-between items-center mt-4 "></div>
+      <div class="w-full p-5 border border-50 shadow-lg rounded-lg">
+          <h2 class="text-2xl font-bold mb-4">Analytical Skills:</h2>
+          <p class="text-gray-700">
+              <ul class="list-disc list-inside">
+                  <li>Excellent problem-solving abilities and critical thinking.</li>
+                  <li>Strong statistical analysis skills and experience with data modeling.</li>
+                  <li>Ability to interpret complex datasets and translate findings into actionable insights.</li>
+              </ul>
+          </p>
+      </div>
+
+      <div class="flex justify-between items-center mt-4 "></div>
+      <div class="w-full p-5 border border-50 shadow-lg rounded-lg">
+          <h2 class="text-2xl font-bold mb-4">Communication Skills:</h2>
+          <p class="text-gray-700">
+              <ul class="list-disc list-inside">
+                  <li>Ability to present data insights in a clear and concise manner.</li>
+                  <li>Strong written and verbal communication skills for reporting and documentation purposes.</li>
+                  <li>Capability to explain technical concepts to non-technical stakeholders.</li>
+              </ul>
+          </p>
+      </div>
+
+      <div class="flex justify-between items-center mt-4 "></div>
+      <div class="w-full p-5 border border-50 shadow-lg rounded-lg">
+          <h2 class="text-2xl font-bold mb-4">Soft Skills:</h2>
+          <p class="text-gray-700">
+              <ul class="list-disc list-inside">
+                  <li>Strong organizational and time management skills.</li>
+                  <li>Ability to work both independently and as part of a team.</li>
+                  <li>Adaptability and willingness to learn new technologies and methodologies</li>
+              </ul>
+          </p>
+      </div>
+
+      <div class="flex justify-between items-center mt-4 "></div>
+      <div class="w-full p-5 border border-50 shadow-lg rounded-lg">
+          <h2 class="text-2xl font-bold mb-4">Certifications (optional but beneficial):</h2>
+          <p class="text-gray-700">
+              <ul class="list-disc list-inside">
+                  <li>Relevant certifications such as Microsoft Certified: Data Analyst Associate, Certified Analytics Professional (CAP), or Google Data Analytics Professional Certificate.</li>
+              </ul>
+          </p>
+      </div>
+
+
+      </body>
+</html>
+           
+       
+        
+       

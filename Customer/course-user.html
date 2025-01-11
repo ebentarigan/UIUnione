@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unione</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <style>
         /* Perbaikan z-index untuk dropdown */
@@ -23,14 +20,13 @@
     </style>
 </head>
 
-<body class="bg-white ">
+<body class="bg-white">
     <!-- Header -->
     <header>
-        
-        <nav class="flex  items-center fixed w-full justify-between p-2 top-0 bg-black ">
+        <nav class="flex items-center justify-between p-2 bg-black">
             <!-- Logo -->
             <div class="Logo">
-                <img src="img/logoputihtest.png" alt="Logo Website" width="80" />
+                <img src="../img/logoputihtest.png" alt="Logo Website" width="80" />
             </div>
 
             <!-- Search Bar -->
@@ -45,16 +41,12 @@
             <!-- Navigation Links -->
             <ul class="flex space-x-4 mx-4 text-lg">
                 <li>
-                    <a href="index.html"
-                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
-                        id="course">
-                        Course
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    <a href="course.html" class="text-gray-400" id="job">
+                        course
                     </a>
                 </li>
                 <li>
-                    <a href="jobs.html"
+                    <a href="../jobs.html"
                         class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
                         id="job">
                         Job
@@ -85,7 +77,6 @@
 
             <!-- Profile Section -->
             <div class="relative flex items-center">
-
                 <!-- Profile Button -->
                 <button type="button"
                     class="flex items-center space-x-2 text-sm text-white focus:outline-none px-3 py-2  bg-ghost rounded-md"
@@ -141,62 +132,90 @@
                 userDropdown.classList.add('hidden');
             }
         });
-    
+
+        // Modal functionality
+        const openModalBtn = document.getElementById('openModalBtn');
+        const modal = document.getElementById('modal');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        // Open modal when Info Selengkapnya button is clicked
+        openModalBtn.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+
+        // Close modal when 'Tutup' button is clicked
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        // Close modal if clicked outside of modal content
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
     </script>
-    
-    <!-- Navbar End -->
 
-    <!--Profile Container-->
-  <div class="container mx-auto mt-8 pt-20">
-    <div class="flex flex-wrap md:flex-nowrap gap-4">
-      <!-- Profile -->
-      <div class="w-full md:w-1/3 p-4 shadow-lg border border-50 rounded-lg ">
-        <img src="img/peopleprofile1.jpeg" alt="Foto Profil" class=" w-70 h-60 mx-auto">
-        <div class="flex justify-between items-center mt-4">
-          <h2 class="text-2xl font-bold">Andrea Kalissta</h2>
-          <button type="button" class="text-white rounded-md text-sm px-5 py-1 dark:bg-black dark:hover:bg-blue-300">Make a CV</button>
+    <!-- Carousel Section -->
+    <div class="relative w-full h-[384px] overflow-hidden">
+        <div class="flex transition-transform duration-700 ease-in-out" id="carousel">
+            <!-- Slide 1 -->
+            <div class="flex-shrink-0 w-full">
+                <img src="../img/header-kursus2.jpg" alt="Slide 1" class="w-full h-auto">
+            </div>
+            <!-- Slide 2 -->
+            <div class="flex-shrink-0 w-full">
+                <img src="../img/header-kursus2.jpg" alt="Slide 2" class="w-full h-auto">
+            </div>
+            <!-- Slide 3 -->
+            <div class="flex-shrink-0 w-full">
+                <img src="../img/header-kursus2.jpg" alt="Slide 3" class="w-full h-auto">
+            </div>
         </div>
-       
-      <!--profile view-->
-<button type="button" class="m-1 text-white rounded-md text-sm px-5 py-1 w-full dark:bg-black dark:hover:bg-blue-300">Profile View</button><br>
-<!--post-->
-<button type="button" class="m-1 text-white rounded-md text-sm px-5 py-1 w-full dark:bg-black dark:hover:bg-blue-300">Post</button>
-
-      </div>
-      <!-- Account Settings -->
-      <div class="w-full md:w-2/3 p-10 shadow-lg rounded-lg border border-50">
-        <h2 class="text-2xl font-bold mb-4">Account Settings</h2>
-        <form>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <!-- First Name -->
-            <div>
-              <label for="firstName" class="block font-medium mb-1">Username</label>
-              <input type="text" id="firstName" class="shadow-md  border border-50 rounded-lg p-2 w-full">
-            </div>
-            <!-- Last Name -->
-            <div>
-              <label for="lastName" class="block font-medium mb-1">Email</label>
-              <input type="text" id="lastName" class="shadow-md border border-50 rounded-lg p-2 w-full">
-            </div>
-            <!-- Phone Number -->
-            <div>
-              <label for="phoneNumber" class="block font-medium mb-1">Experience</label>
-              <input type="text" id="phoneNumber" class="shadow-md border border-50 rounded-lg rounded p-2 w-full">
-            </div>
-            <!-- Email Address -->
-            <div>
-              <label for="emailAddress" class="block font-medium mb-1">Education</label>
-              <input type="email" id="emailAddress" class="shadow-md border border-50 rounded-lg p-2 w-full">
-            </div>
-
-            <button type="button" class="m-1 text-white rounded-md text-sm px-5 py-1 w-20 dark:bg-blue-500 dark:hover:bg-blue-300">Submit</button>
-            
-
-
-          </div>
-        </form>
-      </div>
     </div>
-  </div>
-  
+
+    <!-- Course Section -->
+    <h1 class="text-2xl font-bold flex items-center space-x-4 mt-4 ml-6">Daftar Kursus</h1>
+
+    <!-- Course Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+        <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+            <img class="w-full"
+                src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Card image">
+            <div class="px-6 py-4">
+                <h2 class="font-bold text-xl mb-4">Belajar Pemograman untuk pemula</h2>
+                <div class="flex items-center space-x-3">
+                    <img class="w-10 h-10 rounded-full object-cover"
+                        src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Profile picture">
+                    <h3 class="font-bold text-xl mb-4 mt-3">Alan Suryajana</h3>
+                </div>
+                <p class="text-gray-700 text-base mt-2">Ingin belajar dasar pemograman disini tempatnya</p>
+            </div>
+            <div class="px-6 pt-3 pb-4 flex justify-between items-center">
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Cek sekarang</button>
+                <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500" id="openModalBtn">Info Selengkapnya</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pop-up -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center">
+        <div class="modal-content bg-white p-8 rounded-lg w-3/4 md:w-1/2">
+            <h2 class="text-2xl font-bold mb-4">Informasi Kursus</h2>
+            <p class="text-gray-700 mb-6">Ingin belajar dasar pemograman disini tempatnya. Kursus ini dirancang untuk pemula yang
+                ingin memahami dasar-dasar pemrograman dengan cara yang mudah dan menyenangkan.</p>
+            <div class="flex justify-end">
+                <button id="closeModalBtn" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500">Tutup</button>
+            </div>
+        </div>
+    </div>
+
 </body>
+<footer class="bg-black text-white py-4">
+    <div class="container mx-auto text-center">
+      <p class="text-sm">&copy; 2025 Unione. All rights reserved.</p>
+    </div>
+  </footer>
+</html>

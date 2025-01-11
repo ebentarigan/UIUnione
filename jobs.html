@@ -1,138 +1,416 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Unione</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-        <style>
-            /* Perbaikan z-index untuk dropdown */
-            #user-dropdown {
-                z-index: 1000;
-            }
-        </style>
-    </head>
-<body>
-  <!-- Header -->
-  <header>
-    <nav class="flex items-center justify-between p-2 bg-black">
-        <!-- Logo -->
-        <div class="Logo">
-            <img src="img/logoputihtest.png" alt="Logo Website" width="80" />
-        </div>
 
-        <!-- Search Bar -->
-        <div class="flex items-center space-x-2 flex-grow ml-4 max-w-full">
-            <input type="search"
-                class="p-1 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                placeholder="Search..." />
-            <button class="p-1.5 text-white bg-ghost rounded-full hover:bg-ghost transition duration-200 text-xs">
-                <i class="ri-search-line text-white"></i>
-            </button>
-        </div>
-        <!-- Navigation Links -->
-        <ul class="flex space-x-4 mx-4 text-lg">
-            <li>
-                <a href="course.html"
-                    class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
-                    id="course">
-                    Course
-                    <span
-                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                </a>
-            </li>
-            <li>
-                <a href="jobs.html" class="text-gray-600" id="job">
-                    Job
-                </a>
-            </li>
-            
-            <li>
-                <a href="contact.html"
-                    class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
-                    id="community">
-                    Community
-                    <span
-                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                </a>
-            </li>
-            <li>
-                <a href="register.html"
-                    class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
-                    id="news">
-                    News
-                    <span
-                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
-                </a>
-            </li>
-        </ul>
-
-
-        <!-- Profile Section -->
-        <div class="relative flex items-center">
-            <!-- Profile Button -->
-            <!-- Profile Button -->
-            <button type="button"
-                class="flex items-center space-x-2 text-sm text-white focus:outline-none px-3 py-2  bg-ghost rounded-md"
-                id="user-menu-button">
-                <img class="w-8 h-8 rounded-full object-cover object-center"
-                    src="https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="User Photo">
-                <span class="hidden sm:block text-sm">Eben Tarigan</span>
-            </button>
-
-
-            <!-- Dropdown Menu -->
-            <div id="user-dropdown"
-            class="absolute right-0 hidden w-40 text-sm list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
-            style="top: 40px;">
-            <div class="px-3 py-2">
-                <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
-                <span class="block text-xs text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
-            </div>
-            <ul class="py-1">
-                <li><a href="#"
-                        class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Dashboard</a>
-                </li>
-                <li><a href="#"
-                        class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Settings</a>
-                </li>
-                <li><a href="#"
-                        class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Earnings</a>
-                </li>
-                <li><a href="#"
-                        class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200"><i
-                            class="ri-logout-box-line mr-2"></i>Sign
-                        out</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-<!-- Script -->
-<script>
-    const userMenuButton = document.getElementById('user-menu-button');
-    const userDropdown = document.getElementById('user-dropdown');
-
-    // Toggle dropdown visibility on button click
-    userMenuButton.addEventListener('click', () => {
-        userDropdown.classList.toggle('hidden');
-    });
-
-    // Hide dropdown when clicking outside
-    document.addEventListener('click', (event) => {
-        if (!userMenuButton.contains(event.target) && !userDropdown.contains(event.target)) {
-            userDropdown.classList.add('hidden');
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unione</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* Perbaikan z-index untuk dropdown */
+        #user-dropdown {
+            z-index: 1000;
         }
-    });
+
+        /* Pastikan carousel berada di belakang dropdown */
+        #carousel {
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-white ">
+    <!-- Header -->
+    <header>
+        
+        <nav class="flex items-center justify-between p-4 bg-black top-0 fixed w-full shadow-md z-50">
+            <!-- Logo -->
+            <div class="Logo">
+                <img src="img/logoputihtest.png" alt="Logo Website" width="80" />
+            </div>
+
+            <!-- Search Bar -->
+            <div class="flex items-center space-x-2 flex-grow ml-4 max-w-full">
+                <input type="search"
+                    class="p-1 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                    placeholder="Search..." />
+                <button class="p-1.5 text-white bg-ghost rounded-full hover:bg-ghost transition duration-200 text-xs">
+                    <i class="ri-search-line text-white"></i>
+                </button>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="flex space-x-4 mx-4 text-lg">
+                <li>
+                    <a href="index.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="course">
+                        Course
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="jobs.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="job">
+                        Job
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="community">
+                        Community
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="register.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="news">
+                        News
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+            </ul>
 
 
-</script>
+            <!-- Profile Section -->
+            <div class="relative flex items-center">
+
+                <!-- Profile Button -->
+                <button type="button"
+                    class="flex items-center space-x-2 text-sm text-white focus:outline-none px-3 py-2  bg-ghost rounded-md"
+                    id="user-menu-button">
+                    <img class="w-8 h-8 rounded-full object-cover object-center"
+                        src="https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="User Photo">
+                    <span class="hidden sm:block text-sm">Eben Tarigan</span>
+                </button>
 
 
-<!-- Navbar End -->
+                <!-- Dropdown Menu -->
+                <div id="user-dropdown"
+                    class="absolute right-0 hidden w-40 text-sm list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                    style="top: 40px;">
+                    <div class="px-3 py-2">
+                        <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                        <span class="block text-xs text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                    </div>
+                    <ul class="py-1">
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Dashboard</a>
+                        </li>
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Settings</a>
+                        </li>
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Earnings</a>
+                        </li>
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200"><i
+                                    class="ri-logout-box-line mr-2"></i>Sign
+                                out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Script -->
+    <script>
+        const userMenuButton = document.getElementById('user-menu-button');
+        const userDropdown = document.getElementById('user-dropdown');
+
+        // Toggle dropdown visibility on button click
+        userMenuButton.addEventListener('click', () => {
+            userDropdown.classList.toggle('hidden');
+        });
+
+        // Hide dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!userMenuButton.contains(event.target) && !userDropdown.contains(event.target)) {
+                userDropdown.classList.add('hidden');
+            }
+        });
+    
+    
+    </script>
+    
+
+    <!-- Navbar End -->
+    <!--sidebar-->
+    <aside id="sidebar-multi-level-sidebar"
+        class="fixed top-20 left-0 z-40 w-64 h-screen bg-gray-50 shadow-md border border-gray-100 ">
+
+            <div class="p-2  mx-2 mt-4  space-y-5 border shadow-md bg-white rounded-lg">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-lg font-bold">FILTER</h3>
+                    <a href="#" class="text-blue-500 hover:underline ">Lihat Detail</a>
+                </div>
+
+
+              
+<div class="relative p-2">
+    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none ">
+      <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+      </svg>
+    </div>
+    <input datepicker id="default-datepicker" type="text" class=" text-sm rounded-lg   block w-full ps-10 p-2.5 dark:bg-white  border border-50 shadow-md   dark:text-black " placeholder="Select date">
+  </div>
+  
+              <div class="mt-14  ">
+                <h3 class="text-lg font-bold ">Working Schedule</h3>
+                <div class="flex items-center mb-2 ">
+                  <input id="full-time" type="checkbox" value="" class="mr-2">
+                  <label for="full-time">Full Time</label>
+                </div>
+
+                <div class="flex items-center mb-2  ">
+                    <input id="full-time" type="checkbox" value="" class="mr-2">
+                    <label for="full-time">Part Time</label>
+                  </div>
+
+                  <div class="flex items-center mb-2 ">
+                    <input id="full-time" type="checkbox" value="" class="mr-2">
+                    <label for="full-time">Internship</label>
+                  </div>
+                  <h3 class="text-lg font-bold mb-2 ">Employment Type</h3>
+                  <div class="flex items-center mb-2 ">
+                      <input id="full-time" type="checkbox" value="" class="mr-2">
+                      <label for="full-time">Flexible Schedule</label>
+                    </div>
+              
+                    <div class="flex items-center mb-2 ">
+                      <input id="full-time" type="checkbox" value="" class="mr-2">
+                      <label for="full-time">Shift Work</label>
+                    </div>
+              
+                    <div class="flex items-center mb-2 ">
+                      <input id="full-time" type="checkbox" value="" class="mr-2">
+                      <label for="full-time">Distant Work</label>
+                    </div>
+              
+                    <div class="flex items-center mb-2 ">
+                      <input id="full-time" type="checkbox" value="" class="mr-2">
+                      <label for="full-time">Shift Method</label>
+                    </div>
+                  
+<label class="inline-flex items-center cursor-pointer">
+    <input type="checkbox" value="" class="sr-only peer">
+    <div class="relative w-11 h-6  rounded-full peer dark:bg-black peer-checked:after:translate-x-full  after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-500"></div>
+    <span class="ms-3 text-sm font-medium text-gray-900 dark:text-black">Open to remote </span>
+    <div 
+    class="absolute mt-4 p-4 bg-white shadow rounded-lg border border-gray-200 hidden peer-checked:block">
+    <p class="text-gray-700">Here are more filter options:</p>
+    
+
+      <h3 class="text-lg font-bold mb-2 ">Experience</h3>
+    <div class="flex items-center mb-2">
+        <input id="full-time" type="checkbox" value="" class="mr-2">
+        <label for="full-time">Less than a year</label>
+      </div>
+
+      <div class="flex items-center mb-2 ">
+        <input id="full-time" type="checkbox" value="" class="mr-2">
+        <label for="full-time">1-3 Year</label>
+      </div>
+
+      <div class="flex items-center mb-2 ">
+        <input id="full-time" type="checkbox" value="" class="mr-2">
+        <label for="full-time">3-5 Year</label>
+      </div>
+
+      <div class="flex items-center mb-2 ">
+        <input id="full-time" type="checkbox" value="" class="mr-2">
+        <label for="full-time">5-10 Year</label>
+      </div>
+      
+      <h3 class="text-lg font-bold mb-2 ">Range Salary</h3>
+      <div class="flex items-center mb-2">
+          <input id="full-time" type="checkbox" value="" class="mr-2">
+          <label for="full-time">Less than Rp.1000.000</label>
+        </div>
+  
+        <div class="flex items-center mb-2 ">
+          <input id="full-time" type="checkbox" value="" class="mr-2">
+          <label for="full-time">Rp.1000.000-Rp.5000.000</label>
+        </div>
+  
+        <div class="flex items-center mb-2 ">
+          <input id="full-time" type="checkbox" value="" class="mr-2">
+          <label for="full-time">More than Rp.5000.000</label>
+        </div>
+     </div>
+  </div>
+  </div>
+</div>
+
+    </aside>
+
+<!--daftar job 1-->
+<div class="ml-64 p-5 flex gap-4">
+        <!-- Grid Container -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full pt-20">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg  border border-50 shadow-lg p-4">
+                <img src="img/gambargoogle.png" alt="Job Image" class="rounded-md w-full h-40 object-cover mb-3">
+                <h3 class="text-lg font-bold">GOOGLE LLC</h3>
+                <p class="text-gray-700 mb-3">Deskripsi singkat tentang pekerjaan.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">Tanggal Posting</span>
+                    <a href="#" class="text-blue-500 hover:underline ">Lihat Detail</a>
+                </div>
+            </div>
+    
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg border border-50 shadow-lg p-4">
+                <img src="img/microsoft.png" alt="Job Image" class="rounded-md w-full h-40 object-cover mb-3">
+                <h3 class="text-lg font-bold">MICROSOFT CORPORATION</h3>
+                <p class="text-gray-700 mb-3">Deskripsi singkat tentang pekerjaan.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">Tanggal Posting</span>
+                    <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                </div>
+            </div>
+    
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg border border-50 shadow-lg p-4">
+                <img src="img/unilever.png" alt="Job Image" class="rounded-md w-full h-40 object-cover mb-3">
+                <h3 class="text-lg font-bold">UNILEVER INDONESIA</h3>
+                <p class="text-gray-700 mb-3">Deskripsi singkat tentang pekerjaan.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">Tanggal Posting</span>
+                    <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                </div>
+            </div>
+    
+            <!-- Card 4 -->
+            <div class="bg-white rounded-lg border border-50 shadow-lg p-4">
+                <img src="img/apple.png" alt="Job Image" class="rounded-md w-full h-40 object-cover mb-3">
+                <h3 class="text-lg font-bold">APPLE INC</h3>
+                <p class="text-gray-700 mb-3">Deskripsi singkat tentang pekerjaan.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">Tanggal Posting</span>
+                    <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+<!--job 2-->
+    <div class="ml-64 p-5 flex gap-4">
+    
+            <!-- Grid Container -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-lg border border-50  shadow-lg p-4">
+                    <img src="img/samsung.png" alt="Job Image" class="rounded-md w-full h-40 object-cover mb-3">
+                    <h3 class="text-lg font-bold">SAMSUNG GROUP</h3>
+                    <p class="text-gray-700 mb-3">Deskripsi singkat tentang pekerjaan.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Tanggal Posting</span>
+                        <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                    </div>
+                </div>
+        
+                <!-- Card 2 -->
+                <div class="bg-white rounded-lg border border-50 shadow-lg p-4">
+                    <img src="img/bri.png" alt="Job Image" class="rounded-md w-full h-40 object-cover mb-3">
+                    <h3 class="text-lg font-bold">PT BANK RAKYAT INDONESIA</h3>
+                    <p class="text-gray-700 mb-3">Deskripsi singkat tentang pekerjaan.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Tanggal Posting</span>
+                        <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                    </div>
+                </div>
+        
+                <!-- Card 3 -->
+                <div class="bg-white rounded-lg border border-50 shadow-lg p-4">
+                    <img src="img/mcd.png" alt="Job Image" class="rounded-md w-full h-40 object-cover mb-3">
+                    <h3 class="text-lg font-bold">MC DONALD'S CORPORATION</h3>
+                    <p class="text-gray-700 mb-3">Deskripsi singkat tentang pekerjaan.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Tanggal Posting</span>
+                        <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                    </div>
+                </div>
+        
+                <!-- Card 4 -->
+                <div class="bg-white rounded-lg border border-50 shadow-lg p-4">
+                    <img src="img/starbucks.png" alt="Job Image" class="rounded-md w-full h-40 object-cover mb-3">
+                    <h3 class="text-lg font-bold">STARBUCKS CORPORATION</h3>
+                    <p class="text-gray-700 mb-3">Deskripsi singkat tentang pekerjaan.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Tanggal Posting</span>
+                        <a href="#" class="text-blue-500 hover:underline ">Lihat Detail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+<!--job 3-->
+
+<div class="ml-64 p-5 flex gap-4">
+        <!-- Grid Container -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg border border-50  shadow-lg p-4">
+                <img src="img/adidas.png" alt="Job Image" class="rounded-md w-full h-40 object-cover mb-3">
+                <h3 class="text-lg font-bold">ADIDAS GROUP</h3>
+                <p class="text-gray-700 mb-3">Deskripsi singkat tentang pekerjaan.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">Tanggal Posting</span>
+                    <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                </div>
+            </div>
+    
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg border border-50  shadow-lg p-4">
+                <img src="img/amazon.png" alt="Job Image" class="rounded-md w-full h-40 object-cover mb-3">
+                <h3 class="text-lg font-bold">AMAZON</h3>
+                <p class="text-gray-700 mb-3">Deskripsi singkat tentang pekerjaan.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">Tanggal Posting</span>
+                    <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                </div>
+            </div>
+    
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg border border-50 shadow-lg p-4">
+                <img src="img/toyota.png" alt="Job Image" class="rounded-md w-full h-40 object-cover mb-3">
+                <h3 class="text-lg font-bold">TOYOTA MOTOR CORPORATION</h3>
+                <p class="text-gray-700 mb-3">Deskripsi singkat tentang pekerjaan.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">Tanggal Posting</span>
+                    <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                </div>
+            </div>
+    
+            <!-- Card 4 -->
+            <div class="bg-white rounded-lg border border-50 shadow-lg p-4">
+                <img src="img/intel.png" alt="Job Image" class="rounded-md w-full h-40 object-cover mb-3">
+                <h3 class="text-lg font-bold">INTEL</h3>
+                <p class="text-gray-700 mb-3">Deskripsi singkat tentang pekerjaan.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-sm text-gray-500">Tanggal Posting</span>
+                    <a href="#" class="text-blue-500 hover:underline">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
-
