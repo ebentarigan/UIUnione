@@ -12,17 +12,17 @@
 <!--navigasi-->
 <body>
     <header>
-        <nav class="flex  items-center fixed w-full justify-between p-2 top-0 bg-black">
+        <nav class="flex  items-center fixed w-full justify-between p-2 top-0 bg-black">  <!-- justify(agar elemen merata) top(gada batas)-->
             <!-- Logo -->
             <div class="Logo">
                 <img src="img/logoputihtest.png" alt="Logo Website" width="80" />
             </div>
 
             <!-- Search Bar -->
-            <div class="flex items-center space-x-2 flex-grow ml-4 max-w-full">
+            <div class="flex items-center space-x-2 flex-grow ml-4 max-w-full">  <!--x-horizontal grow(elemen tidak akan tumbuh)-->
                 <input type="search"
-                    class="p-1 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                    placeholder="Search..." />
+                    class="p-1 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" 
+                    placeholder="Search..." /> <!--outline (garis tepi bawaan browser) -->
                 <button class="p-1.5 text-white bg-ghost rounded-full hover:bg-ghost transition duration-200 text-xs">
                     <i class="ri-search-line text-white"></i>
                 </button>
@@ -30,14 +30,14 @@
             <!-- Navigation Links -->
             <ul class="flex space-x-4 mx-4 text-lg">
                 <li>
-                    <a href="course.html" class="text-gray-400" id="job">
+                    <a href="course.html" class="text-white-400" id="job">
                         course
                     </a>
                 </li>
                 <li>
                     <a href="../jobs.html"
                         class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
-                        id="job">
+                        id="job"> <!--relative(relative position (agar bisa di tambah top,right) border(garis tepi/bawah))-->
                         Job
                         <span
                             class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -106,11 +106,11 @@
     </header>
 
 <!-- Header main content -->
-<main class="container mx-auto p-6 grid grid-cols-3 gap-5 mt-16"><!-- container agar konten sesuai di tengah layar,grid-cols membagi kolom menjadi 3,gap(jarak antar grid) -->
-    <section class="col-span-2 bg-white p-3 rounded shadow">
+<main class="container mx-auto p-6 grid grid-cols-3 gap-5 mt-16"><!-- container agar konten sesuai di tengah layar,grid-cols membagi kolom menjadi 3,gap(jarak antar elemen) -->
+    <section class="col-span-2 bg-white p-3 rounded shadow"> 
         <h2 class="text-lg font-semibold mb-4">Add More Connections</h2> <!--text-large(menjadi lebih besar)-->
     
-        <div class="space-y-6 scroll-ml-6 h-34 border box-border p-3 overflow-y-auto max-h-80"><!--scroll margin left,border menambah garis tepi,p-3 = 12px-->
+        <div class="space-y-6 scroll-ml-6 h-34 border box-border p-3 overflow-y-auto max-h-96"><!--scroll margin left,border menambah garis tepi,p-3 = 12px-->
             <!-- Connection 1 -->
             <div class="flex items-center justify-between"> <!--flexbox memberi kontrol tataletak-->
                 <div class="flex items-center space-x-4">
@@ -119,7 +119,7 @@
                 </div>
                 <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
                     Add Connection
-                </button>
+                </button>  <!--x(horizontal, y(vertikal))-->
             </div>
 
             <!--Connection 2 -->
@@ -199,47 +199,46 @@
             <aside class="bg-white p-4 rounded shadow"> <!--aside(elemen catatan tambahan)-->
                 <h2 class="text-lg font-semibold mb-">Popular People to Follow</h2>
             
-                <div class="space-y-6 scroll-ml-6 h-34  p-3 overflow-y-auto max-h-80">
+                <div class="space-y-6 scroll-ml-6 h-34 p-3 overflow-y-auto max-h-96">
                 <!-- List of Popular People -->
                
                     <!-- Popular Person 1 -->
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <img src="img/fotoorang7.jpg" alt="User Image" class="w-10 h-10 rounded-full">
-                            <div>
-                                <span class="text-gray-700 block font-medium">Brandon Sanjaya</span>
-                                <span class="text-xs font-medium text-gray-500 ">Informatics Student at Telkom University</span>
-                            </div>
+                   <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <img src="img/fotoorang2.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                        <div>
+                            <span class="text-gray-700 block font-medium">Alex Andrean</span>
+                            <span class="text-xs font-medium text-gray-500 text-sm">information System  Universitas Indonesia</span>
                         </div>
-                        <button class="px-2 py-2 bg-blue-500 text-white rounded hover:bg-gray-300">
-                            Follow
-                        </button>
                     </div>
-            
-                    <!-- Popular Person 2 -->
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <img src="img/fotoorang8.jpg" alt="User Image" class="w-10 h-10 rounded-full">
-                            <div>
-                                <span class="text-gray-700 block font-medium">Asep Tatang</span>
-                                <span class="text-xs font-medium text-gray-500 text-sm">Informatics Student at Universitas Indonesia</span>
-                            </div>
+                    <button class="px-2 py-2 bg-blue-500 text-white text-sm rounded hover:bg-gray-300">
+                        Follow
+                    </button>
+                </div>
+                   
+                <!-- Popular Person 3 -->
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <img src="img/fotoorang3.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                        <div>
+                            <span class="text-gray-700 block font-medium">Bryan Sanjaya</span>
+                            <span class="text-xs font-medium text-gray-500 text-sm">information System Student at Telkom University</span>
                         </div>
-                        <button class="px-2 py-2 bg-blue-500 text-white rounded hover:bg-blue-300">
-                            Follow
-                        </button>
                     </div>
-            
+                    <button class="px-2 py-2 bg-blue-500 text-white text-sm rounded hover:bg-gray-300">
+                        Follow
+                    </button>
+                </div>
                     <!-- Popular Person 3 -->
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-4">
-                            <img src="img/fotoorang9.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                            <img src="img/fotoorang12.jpg" alt="User Image" class="w-10 h-10 rounded-full">
                             <div>
-                                <span class="text-gray-700 block font-medium">Shopia Aurora</span>
-                                <span class="text-xs font-medium text-gray-500 text-sm">Informatics Student at Telkom University</span>
+                                <span class="text-gray-700 block font-medium">Liani Amora</span>
+                                <span class="text-xs font-medium text-gray-500 text-sm">information System Student at Telkom University</span>
                             </div>
                         </div>
-                        <button class="px-2 py-2 bg-blue-500 text-white rounded hover:bg-gray-300">
+                        <button class="px-2 py-2 bg-blue-500 text-white text-sm rounded hover:bg-gray-300">
                             Follow
                         </button>
                     </div>
@@ -250,27 +249,26 @@
                             <img src="img/fotoorang9.jpg" alt="User Image" class="w-10 h-10 rounded-full">
                             <div>
                                 <span class="text-gray-700 block font-medium">Shopia Aurora</span>
-                                <span class="text-xs font-medium text-gray-500 text-sm">Informatics Student at Telkom University</span>
+                                <span class="text-xs font-medium text-gray-500 text-sm">information System Student at Telkom University</span>
                             </div>
                         </div>
-                        <button class="px-2 py-2 bg-blue-500 text-white rounded hover:bg-gray-300">
+                        <button class="px-2 py-2 bg-blue-500 text-white text-sm rounded hover:bg-gray-300">
                             Follow
                         </button>
                     </div>
 
-                    <!-- Popular Person 3 -->
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center space-x-4">
-                            <img src="img/fotoorang10.jpg" alt="User Image" class="w-10 h-10 rounded-full">
-                            <div>
-                                <span class="text-gray-700 block font-medium">Andrea Kalista</span>
-                                <span class="text-xs font-medium text-gray-500 text-sm">Informatics Student at Telkom University</span>
-                            </div>
+                   <!-- Popular Person 4 -->
+                   <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <img src="img/fotoorang10.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                        <div>
+                            <span class="text-gray-700 block font-medium">Andrea Lydia</span>
+                            <span class="text-xs font-medium text-gray-500 text-sm">information System Student at Telkom University</span>
                         </div>
-                        <button class="px-2 py-2 bg-blue-500 text-white rounded hover:bg-gray-300">
-                            Follow
-                        </button>
                     </div>
+                    <button class="px-2 py-2 bg-blue-500 text-white text-sm rounded hover:bg-gray-300">
+                        Follow
+                    </button>
                 </div>
             </aside>
 </main>
@@ -279,7 +277,7 @@
     <div class="px-4 py-10">
       <hr class="my-8 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-        © 2025 <a href="https://flowbite.com/" class="hover:underline">Unione Group</a>. All Rights Reserved.
+        © 2025 <class="hover:underline">Unione Group</a>. All Rights Reserved.
       </span>
     </div>
   </footer>
