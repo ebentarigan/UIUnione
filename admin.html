@@ -5,76 +5,219 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-white">
+<body class="bg-gray-100 flex">
 
-  <nav class="h-16 bg-black flex justify-between items-center px-5">
-      <!-- Logo -->
-      <div class="h-full flex items-center">
-        <img src="img/logoputihtest.png" alt="Logo" class="h-full max-h-16">
-      </div>
-  
-      <!-- Navigation Links -->
-      <ul class="flex list-none m-0 p-0">
-        <li class="ml-5">
-          <a href="#" class="text-white text-base hover:text-gray-500">Home</a>
-        </li>
-        <li class="ml-5">
-          <a href="#" class="text-white text-base hover:text-gray-500">About</a>
-        </li>
-        <li class="ml-5">
-          <a href="#" class="text-white text-base hover:text-gray-500">Services</a>
-        </li>
-        <li class="ml-5">
-          <a href="#" class="text-white text-base hover:text-gray-500">Contact</a>
-        </li>
-      </ul>
-  </nav><br>
+<!-- Sidebar -->
+<aside class="w-64 h-screen bg-black text-white p-4">
+    <!-- Logo -->
+    <div class="mb-8">
+        <img src="img/logoputihtest.png" alt="Logo Website" width="80" />
+    </div>
 
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg ">
-      <table class="w-full text-sm text-left text-black">
-          <thead class="text-xs text-white uppercase bg-black">
-              <tr>
-                  <th scope="col" class="px-6 py-3">No</th>
-                  <th scope="col" class="px-6 py-3">Nama Pengguna</th>
-                  <th scope="col" class="px-6 py-3">Email</th>
-                  <th scope="col" class="px-6 py-3 text-center">Aksi</th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr class="bg-white border-b hover:bg-gray-50">
-                  <th scope="row" class="px-6 py-4 font-medium text-black">1</th>
-                  <td class="px-6 py-4">Anton</td>
-                  <td class="px-6 py-4">anton123@gmail.com</td>
-                  <td class="px-6 py-4 text-center">
-                      <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                      <span class="mx-2">|</span>
-                      <a href="#" class="text-blue-600 hover:underline">Hapus</a>
-                  </td>
-              </tr>
-              <tr class="bg-white border-b hover:bg-gray-50">
-                  <th scope="row" class="px-6 py-4 font-medium text-black">2</th>
-                  <td class="px-6 py-4">Aldi</td>
-                  <td class="px-6 py-4">aldi@gmail.com</td>
-                  <td class="px-6 py-4 text-center">
-                      <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                      <span class="mx-2">|</span>
-                      <a href="#" class="text-blue-600 hover:underline">Hapus</a>
-                  </td>
-              </tr>
-              <tr class="bg-white hover:bg-gray-50">
-                  <th scope="row" class="px-6 py-4 font-medium text-black">3</th>
-                  <td class="px-6 py-4">Alam</td>
-                  <td class="px-6 py-4">alam@gmail.com</td>
-                  <td class="px-6 py-4 text-center">
-                      <a href="#" class="text-blue-600 hover:underline">Edit</a>
-                      <span class="mx-2">|</span>
-                      <a href="#" class="text-blue-600 hover:underline">Hapus</a>
-                  </td>
-              </tr>
-          </tbody>
-      </table>
-  </div>
+    <!-- Navigation Links -->
+    <ul class="space-y-4">
+        <li><a href="course.html" class="text-lg hover:text-gray-400">Course</a></li>
+        <li><a href="jobs.html" class="text-lg hover:text-gray-400">Job</a></li>
+        <li><a href="komunitas/community.html" class="text-lg hover:text-gray-400">Community</a></li>
+        <li><a href="register.html" class="text-lg hover:text-gray-400">News</a></li>
+    </ul>
+
+    <!-- Profile Section -->
+    <div class="mt-8">
+        <button class="flex items-center space-x-2 text-sm text-white px-3 py-2 bg-ghost rounded-md" id="user-menu-button">
+            <img class="w-8 h-8 rounded-full object-cover" src="https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?q=80&w=1170&auto=format&fit=crop" alt="User Photo">
+            <span class="hidden sm:block text-sm">Eben Tarigan</span>
+        </button>
+    </div>
+</aside>
+
+<!-- Main Content -->
+<div class="flex-1 p-6 bg-white shadow-md rounded-lg mt-8">
+
+    <!-- Dashboard Title -->
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Dashboard Admin</h1>
+
+    <!-- Cards Section -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-blue-500 text-white rounded-lg p-6 text-center">
+            <h2 id="registeredUsers" class="text-4xl font-bold">0</h2>
+            <p class="mt-2 text-lg">Pengguna Terdaftar</p>
+        </div>
+        <div class="bg-green-500 text-white rounded-lg p-6 text-center">
+            <h2 id="createdCourses" class="text-4xl font-bold">0</h2>
+            <p class="mt-2 text-lg">Course Dibuat</p>
+        </div>
+        <div class="bg-yellow-500 text-white rounded-lg p-6 text-center">
+            <h2 id="availableJobs" class="text-4xl font-bold">0</h2>
+            <p class="mt-2 text-lg">Lowongan Tersedia</p>
+        </div>
+        <div class="bg-purple-500 text-white rounded-lg p-6 text-center">
+            <h2 id="communities" class="text-4xl font-bold">0</h2>
+            <p class="mt-2 text-lg">Komunitas</p>
+        </div>
+    </div>
+
+    <!-- Chart Section -->
+    <div class="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+            <canvas id="userChart" width="400" height="200"></canvas>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+            <canvas id="courseChart" width="400" height="200"></canvas>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+            <canvas id="communityChart" width="400" height="200"></canvas>
+        </div>
+    </div>
+
+    <!-- Table Section -->
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-8">
+        <table class="w-full text-sm text-left text-black">
+            <thead class="text-xs text-white uppercase bg-black">
+                <tr>
+                    <th scope="col" class="px-6 py-3">No</th>
+                    <th scope="col" class="px-6 py-3">Nama Pengguna</th>
+                    <th scope="col" class="px-6 py-3">Email</th>
+                    <th scope="col" class="px-6 py-3 text-center">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="bg-white border-b hover:bg-gray-50">
+                    <th scope="row" class="px-6 py-4 font-medium text-black">1</th>
+                    <td class="px-6 py-4">Anton</td>
+                    <td class="px-6 py-4">anton123@gmail.com</td>
+                    <td class="px-6 py-4 text-center">
+                        <a href="#" class="text-blue-600 hover:underline">Edit</a>
+                        <span class="mx-2">|</span>
+                        <a href="#" class="text-blue-600 hover:underline">Hapus</a>
+                    </td>
+                </tr>
+                <!-- More rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Script -->
+<script>
+    const data = {
+        registeredUsers: 1500,
+        createdCourses: 120,
+        availableJobs: 75,
+        communities: 30,
+        monthlyUsers: [200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1500],
+        coursesData: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120],
+        communityData: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
+    };
+
+    // Update Cards Data
+    document.getElementById('registeredUsers').textContent = data.registeredUsers;
+    document.getElementById('createdCourses').textContent = data.createdCourses;
+    document.getElementById('availableJobs').textContent = data.availableJobs;
+    document.getElementById('communities').textContent = data.communities;
+
+    // Chart.js Configuration for User Chart
+    const userCtx = document.getElementById('userChart').getContext('2d');
+    new Chart(userCtx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Pengguna Terdaftar per Bulan',
+                data: data.monthlyUsers,
+                borderColor: 'rgba(59, 130, 246, 1)',
+                backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                borderWidth: 2,
+                fill: true
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Bulan'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Jumlah Pengguna'
+                    }
+                }
+            }
+        }
+    });
+
+    // Chart for Courses
+    const courseCtx = document.getElementById('courseChart').getContext('2d');
+    new Chart(courseCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Courses Dibuat per Bulan',
+                data: data.coursesData,
+                borderColor: 'rgba(16, 185, 129, 1)',
+                backgroundColor: 'rgba(16, 185, 129, 0.2)',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Bulan'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Jumlah Course'
+                    }
+                }
+            }
+        }
+    });
+
+    // Chart for Communities
+    const communityCtx = document.getElementById('communityChart').getContext('2d');
+    new Chart(communityCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Komunitas per Bulan',
+                data: data.communityData,
+                borderColor: 'rgba(139, 92, 246, 1)',
+                backgroundColor: 'rgba(139, 92, 246, 0.2)',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Bulan'
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Jumlah Komunitas'
+                    }
+                }
+            }
+        }
+    });
+</script>
 
 </body>
 </html>
