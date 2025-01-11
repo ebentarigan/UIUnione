@@ -1,60 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://tailwindcss.com/"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-    <title>Connection</title>
-</head>
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist.flowbite.min.js"></script> 
- </body>
 
-
-   <!-- navbarrr -->
  <body class="bg-white-100 font-bold">
  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Media Design</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+  <title>Social Media Design</title>
+</head>
 <!--navigasi-->
-<div class="bg-black text-white sticky top-0 z-50">
-    <div class="container mx-auto flex items-center justify-between py-2">
-      <div class="flex space-x-8">
-        <a href="#" class="hover:text-gray-300">Home</a>
-        <a href="#" class="hover:text-gray-300">Jobs</a>
-        <a href="#" class="hover:text-gray-300">Course</a>
-        <a href="#" class="hover:text-gray-300">Connection</a>
-        <a href="#" class="hover:text-gray-300">Community</a>
+<body>
+    <header>
+        <nav class="flex  items-center fixed w-full justify-between p-2 top-0 bg-black">
+            <!-- Logo -->
+            <div class="Logo">
+                <img src="img/logoputihtest.png" alt="Logo Website" width="80" />
+            </div>
 
-        <input
-        type="text"
-        placeholder="Search..."
-        class="px-20 py-1 rounded bg-white text-black focus:outline-none"
-      />
+            <!-- Search Bar -->
+            <div class="flex items-center space-x-2 flex-grow ml-4 max-w-full">
+                <input type="search"
+                    class="p-1 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                    placeholder="Search..." />
+                <button class="p-1.5 text-white bg-ghost rounded-full hover:bg-ghost transition duration-200 text-xs">
+                    <i class="ri-search-line text-white"></i>
+                </button>
+            </div>
+            <!-- Navigation Links -->
+            <ul class="flex space-x-4 mx-4 text-lg">
+                <li>
+                    <a href="course.html" class="text-gray-400" id="job">
+                        course
+                    </a>
+                </li>
+                <li>
+                    <a href="../jobs.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="job">
+                        Job
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="community">
+                        Community
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="register.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="news">
+                        News
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+            </ul>
 
-      <a href="#" class="hover:text-gray-300">Newspaper</a>
-      <a href="#" class="hover:text-gray-300">Help</a>
-      <a href="#" class="hover:text-gray-300">Profile</a>
-      
-      </div>
-    </div>
-  </div>
+
+            <!-- Profile Section -->
+            <div class="relative flex items-center">
+                <!-- Profile Button -->
+                <button type="button"
+                    class="flex items-center space-x-2 text-sm text-white focus:outline-none px-3 py-2  bg-ghost rounded-md"
+                    id="user-menu-button">
+                    <img class="w-8 h-8 rounded-full object-cover object-center"
+                        src="https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="User Photo">
+                    <span class="hidden sm:block text-sm">Eben Tarigan</span>
+                </button>
+
+
+                <!-- Dropdown Menu -->
+                <div id="user-dropdown"
+                    class="absolute right-0 hidden w-40 text-sm list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+                    style="top: 40px;">
+                    <div class="px-3 py-2">
+                        <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                        <span class="block text-xs text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                    </div>
+                    <ul class="py-1">
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Dashboard</a>
+                        </li>
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Settings</a>
+                        </li>
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200">Earnings</a>
+                        </li>
+                        <li><a href="#"
+                                class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200"><i
+                                    class="ri-logout-box-line mr-2"></i>Sign
+                                out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
+
 <!-- Header main content -->
-<main class="container mx-auto p-6 grid grid-cols-3 gap-3">
+<main class="container mx-auto p-6 grid grid-cols-3 gap-5 mt-16"><!-- container agar konten sesuai di tengah layar,grid-cols membagi kolom menjadi 3,gap(jarak antar grid) -->
     <section class="col-span-2 bg-white p-3 rounded shadow">
-        <h2 class="text-lg font-semibold mb-4">Add More Connections</h2>
+        <h2 class="text-lg font-semibold mb-4">Add More Connections</h2> <!--text-large(menjadi lebih besar)-->
     
-        <div class="space-y-6 scroll-ml-6 h-34 border box-border p-3 overflow-y-auto max-h-80">
+        <div class="space-y-6 scroll-ml-6 h-34 border box-border p-3 overflow-y-auto max-h-80"><!--scroll margin left,border menambah garis tepi,p-3 = 12px-->
             <!-- Connection 1 -->
-            <div class="flex items-center justify-between">
+            <div class="flex items-center justify-between"> <!--flexbox memberi kontrol tataletak-->
                 <div class="flex items-center space-x-4">
-                    <img src="../img/fotoll2.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                    <img src="/img/fotoll2.jpg" alt="User Image" class="w-10 h-10 rounded-full">
                     <span class="text-gray-700">Ray Alexandro</span>
                 </div>
                 <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
@@ -65,7 +125,7 @@
             <!--Connection 2 -->
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <img src="fotoc1.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                    <img src="img/fotoc1.jpg" alt="User Image" class="w-10 h-10 rounded-full">
                     <span class="text-gray-700">Gerrald Kalista</span>
                 </div>
                 <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
@@ -76,7 +136,7 @@
              <!--Connection 3-->
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <img src="fotoL1.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                    <img src="img/fotoorang1.jpg" alt="User Image" class="w-10 h-10 rounded-full">
                     <span class="text-gray-700">Ray Alexandro</span>
                 </div>
                 <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
@@ -87,10 +147,10 @@
             <!--Connection 4-->
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <img src="fotol1 (2).jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                    <img src="img/fotoorang4.jpg" alt="User Image" class="w-10 h-10 rounded-full">
                     <span class="text-gray-700">Grace Septiani</span>
                 </div>
-                <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"> <!--hover(interaksi kursor)-->
                     Add Connection
                 </button>
             </div>
@@ -99,8 +159,8 @@
              <!--Connection 2 -->
              <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <img src="fotoc1.jpg" alt="User Image" class="w-10 h-10 rounded-full">
-                    <span class="text-gray-700">Gerrald Kalista</span>
+                    <img src="img/fotoorang2.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                    <span class="text-gray-700">Zyan Lyn</span>
                 </div>
                 <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
                     Add Connection
@@ -111,8 +171,8 @@
              <!--Connection 4-->
              <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <img src="fotol1 (2).jpg" alt="User Image" class="w-10 h-10 rounded-full">
-                    <span class="text-gray-700">Grace Septiani</span>
+                    <img src="img/fotoorang6.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                    <span class="text-gray-700">Axel Arian</span>
                 </div>
                 <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
                     Add Connection
@@ -122,7 +182,7 @@
              <!--Connection 4-->
              <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <img src="fotol1 (2).jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                    <img src="img/fotoorang5.jpg" alt="User Image" class="w-10 h-10 rounded-full">
                     <span class="text-gray-700">Grace Septiani</span>
                 </div>
                 <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
@@ -136,8 +196,8 @@
     </section>
     
              <!-- popular people -->
-            <aside class="bg-white p-4 rounded shadow">
-                <h2 class="text-lg font-semibold mb-4">Popular People to Follow</h2>
+            <aside class="bg-white p-4 rounded shadow"> <!--aside(elemen catatan tambahan)-->
+                <h2 class="text-lg font-semibold mb-">Popular People to Follow</h2>
             
                 <div class="space-y-6 scroll-ml-6 h-34  p-3 overflow-y-auto max-h-80">
                 <!-- List of Popular People -->
@@ -145,7 +205,7 @@
                     <!-- Popular Person 1 -->
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-4">
-                            <img src="fotoL1.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                            <img src="img/fotoorang7.jpg" alt="User Image" class="w-10 h-10 rounded-full">
                             <div>
                                 <span class="text-gray-700 block font-medium">Brandon Sanjaya</span>
                                 <span class="text-xs font-medium text-gray-500 ">Informatics Student at Telkom University</span>
@@ -159,10 +219,10 @@
                     <!-- Popular Person 2 -->
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-4">
-                            <img src="fotoll2.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                            <img src="img/fotoorang8.jpg" alt="User Image" class="w-10 h-10 rounded-full">
                             <div>
                                 <span class="text-gray-700 block font-medium">Asep Tatang</span>
-                                <span class="text-xs font-medium text-gray-500 text-sm">Informatics Student at Telkom University</span>
+                                <span class="text-xs font-medium text-gray-500 text-sm">Informatics Student at Universitas Indonesia</span>
                             </div>
                         </div>
                         <button class="px-2 py-2 bg-blue-500 text-white rounded hover:bg-blue-300">
@@ -173,7 +233,7 @@
                     <!-- Popular Person 3 -->
                     <div class="flex items-center justify-between">
                         <div class="flex items-center space-x-4">
-                            <img src="fotoC1 (2).jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                            <img src="img/fotoorang9.jpg" alt="User Image" class="w-10 h-10 rounded-full">
                             <div>
                                 <span class="text-gray-700 block font-medium">Shopia Aurora</span>
                                 <span class="text-xs font-medium text-gray-500 text-sm">Informatics Student at Telkom University</span>
@@ -184,6 +244,33 @@
                         </button>
                     </div>
 
+                    <!-- Popular Person 3 -->
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="img/fotoorang9.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                            <div>
+                                <span class="text-gray-700 block font-medium">Shopia Aurora</span>
+                                <span class="text-xs font-medium text-gray-500 text-sm">Informatics Student at Telkom University</span>
+                            </div>
+                        </div>
+                        <button class="px-2 py-2 bg-blue-500 text-white rounded hover:bg-gray-300">
+                            Follow
+                        </button>
+                    </div>
+
+                    <!-- Popular Person 3 -->
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <img src="img/fotoorang10.jpg" alt="User Image" class="w-10 h-10 rounded-full">
+                            <div>
+                                <span class="text-gray-700 block font-medium">Andrea Kalista</span>
+                                <span class="text-xs font-medium text-gray-500 text-sm">Informatics Student at Telkom University</span>
+                            </div>
+                        </div>
+                        <button class="px-2 py-2 bg-blue-500 text-white rounded hover:bg-gray-300">
+                            Follow
+                        </button>
+                    </div>
                 </div>
             </aside>
 </main>
@@ -192,7 +279,7 @@
     <div class="px-4 py-10">
       <hr class="my-8 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
-        © 2024 <a href="https://flowbite.com/" class="hover:underline">Telkom Group</a>. All Rights Reserved.
+        © 2025 <a href="https://flowbite.com/" class="hover:underline">Unione Group</a>. All Rights Reserved.
       </span>
     </div>
   </footer>
