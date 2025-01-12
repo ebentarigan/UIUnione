@@ -66,91 +66,107 @@
         </nav>
     </header>
 
-    <!-- Content -->
-    <main class="flex-grow container mx-auto p-6 mt-6">
-        <div class="w-full max-w-lg bg-white shadow-lg rounded-lg p-6">
-            <h2 class="text-lg font-bold mb-6">Your Notifications</h2>
-            <!-- Notification content here -->
-<div class="space-y-4">
+ <!-- Content -->
+ <main class="container mx-auto p-4 flex-grow overflow-y-auto">
+  <h2 class="text-xl font-bold mb-4">Your Notifications</h2>
+  <div class="space-y-4">
       <!-- Notification 1 -->
-      <div class="flex items-start bg-blue-50 p-4 rounded-lg shadow">
-        <img src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User" class="w-10 h-10 rounded-full">
-        <div class="ml-4">
-          <p class="text-sm font-medium">
-            Amélie <span class="text-gray-500">commented in</span> <span class="text-blue-600">Dashboard 2.0</span>
-          </p>
-          <p class="text-xs text-gray-500">Friday 3:12 PM · 2 hours ago</p>
-          <p class="mt-2 text-sm bg-white p-2 rounded-lg border">Really love this approach. I think this is the best solution for the document sync UX issue.</p>
-        </div>
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> commented in <span class="text-blue-500">Dashboard 2.0</span></p>
+              <p class="text-sm text-gray-500">2 hours ago</p>
+          </div>
       </div>
 
       <!-- Notification 2 -->
-      <div class="flex items-start bg-blue-50 p-4 rounded-lg shadow">
-        <img src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User" class="w-10 h-10 rounded-full">
-        <div class="ml-4">
-          <p class="text-sm font-medium">
-            Sienna <span class="text-gray-500">followed you</span>
-          </p>
-          <p class="text-xs text-gray-500">Friday 3:04 PM · 2 hours ago</p>
-        </div>
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> followed you</p>
+              <p class="text-sm text-gray-500">2 hours ago</p>
+          </div>
       </div>
 
       <!-- Notification 3 -->
-      <div class="flex items-start bg-blue-50 p-4 rounded-lg shadow">
-        <img src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User" class="w-10 h-10 rounded-full">
-        <div class="ml-4">
-          <p class="text-sm font-medium">
-            Ammar <span class="text-gray-500">invited you to</span> <span class="text-blue-600">Blog design</span>
-          </p>
-          <p class="text-xs text-gray-500">Friday 2:22 PM · 3 hours ago</p>
-          <div class="mt-2 flex space-x-2">
-            <button class="px-4 py-2 text-sm text-gray-700 border border-gray-300 rounded-lg hover:bg-gray-100">Decline</button>
-            <button class="px-4 py-2 text-sm text-white bg-blue-600 rounded-lg hover:bg-blue-700">Accept</button>
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> invited you to <span class="text-blue-500">Blog design</span></p>
+              <p class="text-sm text-gray-500">3 hours ago</p>
           </div>
-        </div>
       </div>
 
       <!-- Notification 4 -->
-      <div class="flex items-start bg-blue-50 p-4 rounded-lg shadow">
-        <img src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User" class="w-10 h-10 rounded-full">
-        <div class="ml-4">
-          <p class="text-sm font-medium">
-            Mathilde <span class="text-gray-500">shared a file in</span> <span class="text-blue-600">Dashboard 2.0</span>
-          </p>
-          <p class="text-xs text-gray-500">Friday 1:40 PM · 4 hours ago</p>
-          <div class="mt-2 flex items-center space-x-2 bg-white p-2 rounded-lg border">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-gray-500">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25a2.25 2.25 0 00-2.25-2.25h-3a2.25 2.25 0 00-2.25 2.25V9m6.75 0V5.25m0 0h-6m6 0h2.25a2.25 2.25 0 012.25 2.25V12m0 0v6.75m0-6.75h2.25m-2.25 0H12m0 0v6.75m0-6.75H8.25M15 21h6m-6 0a2.25 2.25 0 01-2.25-2.25V15m0 0h2.25m0 0v6.75" />
-            </svg>
-            <span class="text-sm">Prototype recording 01.mp4 · 14 MB</span>
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> shared a file in <span class="text-blue-500">Dashboard 2.0</span></p>
+              <p class="text-sm text-gray-500">4 hours ago</p>
           </div>
-        </div>
       </div>
-    </div>
 
-        </div>
-    </main>
+      <!-- Notification 5 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> updated <span class="text-blue-500">Project Alpha</span></p>
+              <p class="text-sm text-gray-500">5 hours ago</p>
+          </div>
+      </div>
 
-    <!-- Footer -->
-    <footer class="bg-black text-white py-4 mt-auto">
-        <div class="container mx-auto text-center">
-            <p class="text-sm">&copy; 2025 Unione. All rights reserved.</p>
-        </div>
-    </footer>
+      <!-- Notification 6 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> liked your post in <span class="text-blue-500">Community Forum</span></p>
+              <p class="text-sm text-gray-500">6 hours ago</p>
+          </div>
+      </div>
 
-    <script>
-        const userMenuButton = document.getElementById('user-menu-button');
-        const userDropdown = document.getElementById('user-dropdown');
+      <!-- Notification 7 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> mentioned you in <span class="text-blue-500">Marketing Strategy</span></p>
+              <p class="text-sm text-gray-500">7 hours ago</p>
+          </div>
+      </div>
 
-        userMenuButton.addEventListener('click', () => {
-            userDropdown.classList.toggle('hidden');
-        });
+      <!-- Notification 8 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> started following <span class="text-blue-500">Design Trends</span></p>
+              <p class="text-sm text-gray-500">8 hours ago</p>
+          </div>
+      </div>
 
-        document.addEventListener('click', (event) => {
-            if (!userMenuButton.contains(event.target) && !userDropdown.contains(event.target)) {
-                userDropdown.classList.add('hidden');
-            }
-        });
-    </script>
+      <!-- Notification 9 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> uploaded a file to <span class="text-blue-500">Team Project</span></p>
+              <p class="text-sm text-gray-500">9 hours ago</p>
+          </div>
+      </div>
+
+      <!-- Notification 10 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> commented on <span class="text-blue-500">UI Update</span></p>
+              <p class="text-sm text-gray-500">10 hours ago</p>
+          </div>
+      </div>
+  </div>
+</main>
+
+
+<!-- Footer -->
+<footer class="bg-black text-white text-center py-4">
+  <p>&copy; 2025 Unione. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
