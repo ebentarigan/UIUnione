@@ -49,23 +49,8 @@
         <button type="submit" class="mt-6 w-full py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700">Create Course</button>
     </form>
 
-    <h2 class="text-2xl text-center mt-12">Available Courses</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mt-6">
-        <?php if ($result->num_rows > 0): ?>
-            <?php while ($course = $result->fetch_assoc()) : ?>
-                <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                    <img src="../img/<?= htmlspecialchars($course['photo']); ?>" alt="Course Photo" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <h2 class="text-xl font-bold"><?= htmlspecialchars($course['title']); ?></h2>
-                        <p class="text-sm"><?= htmlspecialchars($course['description']); ?></p>
-                        <p class="text-sm mt-2">Start: <?= date('d M Y, H:i', strtotime($course['start_date'])); ?></p>
-                        <p class="text-sm">End: <?= date('d M Y, H:i', strtotime($course['end_date'])); ?></p>
-                    </div>
-                </div>
-            <?php endwhile; ?>
-        <?php else: ?>
-            <p class="col-span-full text-center text-lg text-gray-700">No available courses at the moment.</p>
-        <?php endif; ?>
+    
+
     </div>
 </body>
 <footer class="bg-black text-white py-4">
