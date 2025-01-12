@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unione</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* Z-index fixes */
+        #user-dropdown {
+            z-index: 1000;
+        }
+        #carousel {
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header>
+        <nav class="fixed top-0 left-0 w-full flex items-center justify-between p-2 bg-black z-50">
+            <!-- Logo -->
+            <div class="Logo">
+                <img src="img/logoputihtest.png" alt="Logo Website" width="80">
+            </div>
+
+            <!-- Search Bar -->
+            <div class="flex items-center space-x-2 flex-grow ml-4 max-w-full">
+                <input type="search" class="p-1 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" placeholder="Search...">
+                <button class="p-1.5 text-white bg-ghost rounded-full hover:bg-ghost transition duration-200 text-xs">
+                    <i class="ri-search-line text-white"></i>
+                </button>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="flex space-x-4 mx-4 text-lg">
+                <li><a href="index.html" class="text-white hover:text-gray-500">Course</a></li>
+                <li><a href="jobs.html" class="text-white hover:text-gray-500">Job</a></li>
+                <li><a href="contact.html" class="text-white hover:text-gray-500">Community</a></li>
+                <li><a href="register.html" class="text-white hover:text-gray-500">News</a></li>
+            </ul>
+
+            <!-- Profile Section -->
+            <div class="relative flex items-center">
+                <button type="button" class="flex items-center space-x-2 text-sm text-white focus:outline-none px-3 py-2 bg-ghost rounded-md" id="user-menu-button">
+                    <img class="w-8 h-8 rounded-full object-cover object-center aspect-square" src="https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="User Photo">
+                    <span class="hidden sm:block text-sm">Eben Tarigan</span>
+                </button>
+
+                <!-- Dropdown Menu -->
+                <div id="user-dropdown" class="absolute right-0 hidden w-40 text-sm list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600" style="top: 40px;">
+                    <div class="px-3 py-2">
+                        <span class="block text-sm text-gray-900 dark:text-white">Bonnie Green</span>
+                        <span class="block text-xs text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
+                    </div>
+                    <ul class="py-1">
+                        <li><a href="#" class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100">Dashboard</a></li>
+                        <li><a href="#" class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100">Settings</a></li>
+                        <li><a href="#" class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100">Earnings</a></li>
+                        <li><a href="#" class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-100"><i class="ri-logout-box-line mr-2"></i>Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+ <!-- Content -->
+ <main class="container mx-auto p-4 flex-grow overflow-y-auto">
+  <h2 class="text-xl font-bold mb-4">Your Notifications</h2>
+  <div class="space-y-4">
+      <!-- Notification 1 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> commented in <span class="text-blue-500">Dashboard 2.0</span></p>
+              <p class="text-sm text-gray-500">2 hours ago</p>
+          </div>
+      </div>
+
+      <!-- Notification 2 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> followed you</p>
+              <p class="text-sm text-gray-500">2 hours ago</p>
+          </div>
+      </div>
+
+      <!-- Notification 3 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> invited you to <span class="text-blue-500">Blog design</span></p>
+              <p class="text-sm text-gray-500">3 hours ago</p>
+          </div>
+      </div>
+
+      <!-- Notification 4 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> shared a file in <span class="text-blue-500">Dashboard 2.0</span></p>
+              <p class="text-sm text-gray-500">4 hours ago</p>
+          </div>
+      </div>
+
+      <!-- Notification 5 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> updated <span class="text-blue-500">Project Alpha</span></p>
+              <p class="text-sm text-gray-500">5 hours ago</p>
+          </div>
+      </div>
+
+      <!-- Notification 6 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> liked your post in <span class="text-blue-500">Community Forum</span></p>
+              <p class="text-sm text-gray-500">6 hours ago</p>
+          </div>
+      </div>
+
+      <!-- Notification 7 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> mentioned you in <span class="text-blue-500">Marketing Strategy</span></p>
+              <p class="text-sm text-gray-500">7 hours ago</p>
+          </div>
+      </div>
+
+      <!-- Notification 8 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> started following <span class="text-blue-500">Design Trends</span></p>
+              <p class="text-sm text-gray-500">8 hours ago</p>
+          </div>
+      </div>
+
+      <!-- Notification 9 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> uploaded a file to <span class="text-blue-500">Team Project</span></p>
+              <p class="text-sm text-gray-500">9 hours ago</p>
+          </div>
+      </div>
+
+      <!-- Notification 10 -->
+      <div class="p-4 bg-white rounded shadow flex items-center">
+          <img class="w-12 h-12 rounded-full object-cover mr-4" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVvcGxlfGVufDB8fDB8fHww" alt="User">
+          <div>
+              <p><strong>Amélie</strong> commented on <span class="text-blue-500">UI Update</span></p>
+              <p class="text-sm text-gray-500">10 hours ago</p>
+          </div>
+      </div>
+  </div>
+</main>
+
+
+<!-- Footer -->
+<footer class="bg-black text-white text-center py-4">
+  <p>&copy; 2025 Unione. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

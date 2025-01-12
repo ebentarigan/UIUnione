@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unione</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        /* Perbaikan z-index untuk dropdown */
+        #user-dropdown {
+            z-index: 1000;
+        }
+
+        /* Pastikan carousel berada di belakang dropdown */
+        #carousel {
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Header -->
+    <header>
+        <nav class="fixed top-0 w-full z-50 flex items-center justify-between p-2 bg-black">
+            <!-- Logo -->
+            <div class="Logo">
+                <a href="beranda.html" ><img src="img/logoputihtest.png" alt="Logo Website" width="80" /></a>
+            </div>
+    
+            <!-- Search Bar -->
+            <div class="flex items-center space-x-2 flex-grow ml-4 max-w-full">
+                <input type="search"
+                    class="p-1 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                    placeholder="Search..." />
+                <button class="p-1.5 text-white bg-ghost rounded-full hover:bg-ghost transition duration-200 text-xs">
+                    <i class="ri-search-line text-white"></i>
+                </button>
+            </div>
+    
+            <!-- Navigation Links -->
+            <ul class="flex space-x-4 mx-4 text-lg">
+                <li>
+                    <a href="course-user.html"
+                        class="text-gray-400 relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="course">
+                        Course
+                    </a>
+                </li>
+                <li>
+                    <a href="jobs.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="job">
+                        Job
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="komunitas/community.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="community">
+                        Community
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="register.html"
+                        class="text-white relative group hover:text-gray-500 border-b-2 border-transparent group-active:border-b-2 group-active:border-white"
+                        id="news">
+                        News
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+                    </a>
+                </li>
+            </ul>
+    
+            <!-- Profile Section -->
+            <div class="relative flex items-center">
+                <!-- Profile Button -->
+                <button type="button"
+                    class="flex items-center space-x-2 text-sm text-white focus:outline-none px-3 py-2 bg-ghost rounded-md"
+                    id="user-menu-button">
+                    <img class="w-8 h-8 rounded-full object-cover object-center"
+                        src="https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="User Photo">
+                    <span class="hidden sm:block text-sm">Andreas kalista</span>
+                </button>
+    
+                <!-- Dropdown Menu -->
+                <div id="user-dropdown"
+                class="absolute right-0 hidden w-40 text-sm list-none bg-gray-100 divide-y divide-gray-200 rounded-lg shadow"
+                style="top: 40px;">
+                <div class="px-3 py-2">
+                    <a href="profileawal.html" class="block text-sm text-gray-700">Andreas kalista</a>
+                    <a class="block text-xs text-gray-500 truncate">name@flowbite.com</a>
+                </div>
+                <ul class="py-1">
+                    <li>
+                        <a href="#" class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-200">
+                            <i class="ri-message-2-line mr-2"></i>Message
+                        </a>
+                    </li>
+                    <li>
+                        <a href="setting.html" class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-200">
+                            <i class="ri-settings-3-line mr-2"></i>Settings
+                        </a>
+                    </li>
+                    <li>
+                        <a href="FAQ.html" class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-200">
+                            <i class="ri-question-line mr-2"></i>FAQ
+                        </a>
+                    </li>
+                    <li>
+                        <a href="notification.html" class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-200">
+                            <i class="ri-notification-line mr-2"></i>Notifications
+                        </a>
+                    </li>                        
+                    <li>
+                        <a href="index.html" class="block px-3 py-1 text-xs text-gray-700 hover:bg-gray-200">
+                            <i class="ri-logout-box-line mr-2"></i>Sign out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Script -->
+    <script>
+        const userMenuButton = document.getElementById('user-menu-button');
+        const userDropdown = document.getElementById('user-dropdown');
+
+        // Toggle dropdown visibility on button click
+        userMenuButton.addEventListener('click', () => {
+            userDropdown.classList.toggle('hidden');
+        });
+
+        // Hide dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!userMenuButton.contains(event.target) && !userDropdown.contains(event.target)) {
+                userDropdown.classList.add('hidden');
+            }
+        });
+    
+    
+    </script>
+    
+
+    <!-- Navbar End -->
+
+
+
+    <!-- Carousel Section -->
+    <div class="relative w-full h-[384px] overflow-hidden pt-20 pd-0 border-black"> <!-- Tambahkan mb-8 untuk memberi jarak bawah -->
+        <div class="flex transition-transform duration-700 ease-in-out" id="carousel">
+            <div class="flex-shrink-0 w-full">
+                <img src="img/header-kursus1.png" alt="Slide 1" class="w-full h-auto">
+            </div>
+            <div class="flex-shrink-0 w-full">
+                <img src="img/header-kursus1.png" alt="Slide 2" class="w-full h-auto">
+            </div>
+            <div class="flex-shrink-0 w-full">
+                <img src="img/header-kursus1.png" alt="Slide 3" class="w-full h-auto">
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls and Indicators -->
+    <script>
+        const carousel = document.getElementById('carousel');
+        const slides = carousel.children;
+        const totalSlides = slides.length;
+        let currentIndex = 0;
+
+        function updateSlide() {
+            const offset = -(currentIndex * 100);
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlide();
+        }, 3000);
+
+        updateSlide();
+    </script>
+    <!-- end -->
+
+
+    <div class="flex space-x-8 place-content-center mt-10">
+ 
+        <a href="#course" class="flex items-center space-x-2 border border-gray-300 px-6 py-3 rounded-full hover:bg-gray-100">
+            <i class="ri-book-open-line text-black  text-xl"></i>
+            <span>My Course</span>
+        </a>
+        <a href="#certificate" class="flex items-center space-x-2 border border-gray-300 px-6 py-3 rounded-full hover:bg-gray-100">
+            <i class="ri-award-line text-black text-xl"></i>
+            <span>My Certificate</span>
+        </a>
+        <a href="#assets" class="flex items-center space-x-2 border border-gray-300 px-6 py-3 rounded-full hover:bg-gray-100">
+            <i class="ri-folder-line text-black- text-xl"></i>
+            <span>My Assets</span>
+        </a>
+        <a href="#scores" class="flex items-center space-x-2 border border-gray-300 px-6 py-3 rounded-full hover:bg-gray-100">
+            <i class="ri-bar-chart-box-line text-black text-xl"></i>
+            <span>My Scores</span>
+        </a>
+    </div>
+    
+    <h1 class="font-bold text-3xl text-left text-gray-800 pt-20 mb-8 pl-9 flex items-center space-x-3 pb-0">
+        <i class="ri-macbook-fill text-black text-3xl"></i>
+        <span>Available Course</span>
+    </h1>
+    
+
+    <!-- Card Section -->
+    <div class="px-9 py-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img class="w-full h-56 object-cover rounded-t-lg"
+                    src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Course Image">
+                <div class="p-4">
+                    <h1 class="text-xl font-semibold text-gray-800 pb-4">Dasar Algoritma dan Pemrograman</h1>
+                    <div class="flex items-center space-x-2">
+                        <img class="w-8 h-8 rounded-full object-cover"
+                            src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Profile picture">
+                        <h5 class="font-bold text-sm">Alan</h5>
+                    </div>
+                    <p class="mt-2 text-gray-600 text-sm">Short description of the course goes here. Learn something new and
+                        enhance your skills.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <button id="openModal" class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition duration-200">Join Course</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal -->
+            <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden z-50">
+                <div class="bg-white rounded-lg w-96 p-6 transform scale-90 opacity-0 transition-transform duration-300 ease-in-out"
+                    id="modalContent">
+                    <h2 class="text-xl font-bold text-gray-800">Dasar Algoritma dan Pemrograman</h2>
+                    <p class="mt-4 text-gray-600">Detail kursus ini mencakup dasar-dasar pemrograman, algoritma, dan teknik untuk
+                        memulai pengembangan perangkat lunak.</p>
+                    <div class="mt-6 flex justify-end space-x-4">
+                        <button id="closeModal" class="bg-gray-500 text-white px-4 py-2 rounded-full hover:bg-gray-600 transition duration-200">Close</button>
+                        <a href="kursus-video.html"><button  class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-200">Enroll Now</button></a>
+                    </div>
+                </div>
+            </div>
+            <script>
+                const openModal = document.getElementById('openModal');
+                const closeModal = document.getElementById('closeModal');
+                const modal = document.getElementById('modal');
+                const modalContent = document.getElementById('modalContent');
+            
+                openModal.addEventListener('click', () => {
+                    modal.classList.remove('hidden');
+                    setTimeout(() => {
+                        modalContent.classList.remove('scale-90', 'opacity-0');
+                        modalContent.classList.add('scale-100', 'opacity-100');
+                    }, 50); // Delay untuk memulai animasi
+                });
+            
+                closeModal.addEventListener('click', () => {
+                    modalContent.classList.remove('scale-100', 'opacity-100');
+                    modalContent.classList.add('scale-90', 'opacity-0');
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                    }, 300); // Durasi sesuai animasi `duration-300`
+                });
+            
+                // Close modal jika klik di luar konten
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal) {
+                        modalContent.classList.remove('scale-100', 'opacity-100');
+                        modalContent.classList.add('scale-90', 'opacity-0');
+                        setTimeout(() => {
+                            modal.classList.add('hidden');
+                        }, 300);
+                    }
+                });
+            </script>
+            
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img class="w-full h-56 object-cover rounded-t-lg" src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course Image">
+                <div class="p-4">
+                    <h1 class="text-xl font-semibold text-gray-800 pb-4 ">Dasar Algoritma dan pemograman</h1>
+					<div class="flex items-center space-x-2">
+            <img class="w-8 h-8 rounded-full object-cover"
+                src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Profile picture">
+            <h5 class="font-bold text-sm">Alan </h5>
+            </div>
+                    <p class="mt-2 text-gray-600 text-sm">Short description of the course goes here. Learn something new and enhance your skills.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition duration-200">Join Course</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img class="w-full h-56 object-cover rounded-t-lg" src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course Image">
+                <div class="p-4">
+                    <h1 class="text-xl font-semibold text-gray-800 pb-4 ">Dasar Algoritma dan pemograman</h1>
+					<div class="flex items-center space-x-2">
+            <img class="w-8 h-8 rounded-full object-cover"
+                src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Profile picture">
+            <h5 class="font-bold text-sm">Alan </h5>
+            </div>
+                    <p class="mt-2 text-gray-600 text-sm">Short description of the course goes here. Learn something new and enhance your skills.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition duration-200">Join Course</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 4 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img class="w-full h-56 object-cover rounded-t-lg" src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course Image">
+                <div class="p-4">
+                    <h1 class="text-xl font-semibold text-gray-800 pb-4 ">Dasar Algoritma dan pemograman</h1>
+					<div class="flex items-center space-x-2">
+            <img class="w-8 h-8 rounded-full object-cover"
+                src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Profile picture">
+            <h5 class="font-bold text-sm">Alan </h5>
+            </div>
+                    <p class="mt-2 text-gray-600 text-sm">Short description of the course goes here. Learn something new and enhance your skills.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition duration-200">Join Course</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 5 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img class="w-full h-56 object-cover rounded-t-lg" src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course Image">
+                <div class="p-4">
+                    <h1 class="text-xl font-semibold text-gray-800 pb-4 ">Dasar Algoritma dan pemograman</h1>
+					<div class="flex items-center space-x-2">
+            <img class="w-8 h-8 rounded-full object-cover"
+                src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Profile picture">
+            <h5 class="font-bold text-sm">Alan </h5>
+            </div>
+                    <p class="mt-2 text-gray-600 text-sm">Short description of the course goes here. Learn something new and enhance your skills.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition duration-200">Join Course</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 6 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img class="w-full h-56 object-cover rounded-t-lg" src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course Image">
+                <div class="p-4">
+                    <h1 class="text-xl font-semibold text-gray-800 pb-4 ">Dasar Algoritma dan pemograman</h1>
+					<div class="flex items-center space-x-2">
+            <img class="w-8 h-8 rounded-full object-cover"
+                src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Profile picture">
+            <h5 class="font-bold text-sm">Alan </h5>
+            </div>
+                    <p class="mt-2 text-gray-600 text-sm">Short description of the course goes here. Learn something new and enhance your skills.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition duration-200">Join Course</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 7 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img class="w-full h-56 object-cover rounded-t-lg" src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course Image">
+                <div class="p-4">
+                    <h1 class="text-xl font-semibold text-gray-800 pb-4 ">Dasar Algoritma dan pemograman</h1>
+					<div class="flex items-center space-x-2">
+            <img class="w-8 h-8 rounded-full object-cover"
+                src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Profile picture">
+            <h5 class="font-bold text-sm">Alan </h5>
+            </div>
+                    <p class="mt-2 text-gray-600 text-sm">Short description of the course goes here. Learn something new and enhance your skills.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition duration-200">Join Course</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 8 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img class="w-full h-56 object-cover rounded-t-lg" src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course Image">
+                <div class="p-4">
+                    <h1 class="text-xl font-semibold text-gray-800 pb-4 ">Dasar Algoritma dan pemograman</h1>
+					<div class="flex items-center space-x-2">
+            <img class="w-8 h-8 rounded-full object-cover"
+                src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Profile picture">
+            <h5 class="font-bold text-sm">Alan </h5>
+            </div>
+                    <p class="mt-2 text-gray-600 text-sm">Short description of the course goes here. Learn something new and enhance your skills.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition duration-200">Join Course</button>
+                    </div>
+                </div>
+            </div>
+            <!-- card 9 -->
+            <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img class="w-full h-56 object-cover rounded-t-lg" src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Course Image">
+                <div class="p-4">
+                    <h1 class="text-xl font-semibold text-gray-800 pb-4 ">Dasar Algoritma dan pemograman</h1>
+					<div class="flex items-center space-x-2">
+            <img class="w-8 h-8 rounded-full object-cover"
+                src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Profile picture">
+            <h5 class="font-bold text-sm">Alan </h5>
+            </div>
+                    <p class="mt-2 text-gray-600 text-sm">Short description of the course goes here. Learn something new and enhance your skills.</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition duration-200">Join Course</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<footer class="bg-ghost  py-6 flex items-center justify-center">
+    <div class="flex items-center space-x-2 text-gray-950">
+        <p>© 2025 Unione Corporation </p>
+    </div>
+</footer>
+
+</html>
